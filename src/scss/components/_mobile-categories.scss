@@ -1,0 +1,45 @@
+.mobile-categories {
+    &__menu {
+        padding: 15px 15px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    li {
+        font-weight: 500;
+        &.has-subcategories {
+            .mobile-categories__link {
+                font-weight: 700;
+            }
+        }
+    }
+    &__link {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+}
+
+.mobile-dropdown {
+    padding: 15px 15px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mobile-icon-1{
+    transition: all 0.3s ease;
+
+    &--open{
+        transform: scaleY(-1);
+    }
+}
+
+.mobile-icon-2{
+    transition: all 0.3s ease;
+
+    &--open{
+        transform: scaleY(-1);
+    }
+}

@@ -1,0 +1,153 @@
+.footer {
+    background-color: #fff;
+    padding-bottom: 15px;
+
+    a {
+        color: #000;
+    }
+
+    .untitled-list {
+        margin-top: 61px;
+    }
+
+    &__mobile-logo {
+        display: none;
+
+        @media (max-width: 768px) {
+            display: block;
+        }
+    }
+
+    &__logo {
+        img {
+            display: block;
+            width: 300px;
+            margin: 0 auto;
+        }
+    }
+
+    &__top {
+        padding-top: 60px;
+        padding-bottom: 15px;
+        border-bottom: 3px solid #287bdd;
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
+    }
+
+    &__contacts {
+        margin-top: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        @media (max-width: 768px) {
+            display: none;
+        }
+
+        &--mobile {
+            display: none;
+
+            @media (max-width: 768px) {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    }
+
+    &__contacts-block {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        box-shadow: 0px 0px 3px 0px #00000052;
+        border-radius: 8px;
+        padding: 8px 10px;
+
+        p {
+            line-height: 1.4;
+        }
+    }
+
+    &__socials-block {
+        width: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        box-shadow: 0px 0px 3px 0px #00000052;
+        border-radius: 8px;
+        padding: 10px;
+    }
+
+    &__socials {
+        display: flex;
+        gap: 15px;
+
+        @media (max-width: 768px) {
+            justify-content: center;
+        }
+    }
+
+    &__list {
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            @media (max-width: 768px) {
+                gap: 20px;
+            }
+
+            li {
+                font-size: 18px;
+            }
+        }
+
+        &-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #287bdd;
+            margin-top: 18px;
+            margin-bottom: 15px;
+
+            @media (max-width: 768px) {
+                margin-top: 0;
+            }
+        }
+    }
+
+    &__bottom {
+        padding-top: 15px;
+
+        .copyright {
+            text-align: center;
+            font-size: 14px;
+            
+            a {
+                color: #000;
+                transition: all 0.3s ease;
+
+                &:hover{
+                    color: #287bdd;
+                }
+            }
+        }
+    }
+
+    &__pages {
+        @media (max-width: 768px) {
+            text-align: center;
+        }
+    }
+
+    &__products {
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+}

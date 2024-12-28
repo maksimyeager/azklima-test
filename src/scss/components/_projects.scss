@@ -1,0 +1,44 @@
+.projects {
+    padding: 60px 0 0;
+    &__block {
+        margin-bottom: 60px;
+    }
+
+    .photos,
+    .videos {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+
+        @media (max-width: 576px) {
+            grid-template-columns: 1fr;
+            justify-items: center;
+        }
+    }
+
+    .video {
+        position: relative;
+
+        &--overlay {
+            background-color: rgba(255, 255, 255, 0.4);
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video--icon{
+            transition: all 0.3s ease;
+        }
+
+        &:hover{
+            .video--icon{
+                transform: scale(1.2);
+            }
+        }
+    }
+}

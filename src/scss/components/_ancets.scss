@@ -1,0 +1,80 @@
+.ancets {
+    position: relative;
+    padding: 60px 0; /* Устанавливаем внутренний отступ */
+    margin-bottom: 60px;
+
+    @media (max-width: 768px) {
+        height: 650px;
+    }
+
+    /* Используем псевдоэлемент для фиксации высоты */
+    &::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    .container {
+        width: 100%;
+        position: absolute; /* Абсолютное позиционирование */
+        z-index: 10; /* Устанавливаем поверх header */
+        top: -100px; /* Поднимаем блок вверх */
+        left: 50%;
+        transform: translate(-50%, 0); /* Центруем по горизонтали */
+        display: flex;
+        gap: 30px;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
+    }
+
+    .ancet {
+        position: relative;
+        flex: 1;
+        height: 250px;
+        min-height: 250px !important;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+        justify-content: center;
+        background-color: #fff;
+        box-shadow: 0px 0px 35.6px 0px #00000052;
+        padding: 40px 60px;
+        transition: all 0.3s ease;
+
+        @media (max-width: 768px) {
+            width: 100%;
+        }
+
+        &__title {
+            text-align: center;
+            font-weight: 600;
+            font-size: 20px;
+        }
+
+        svg {
+            color: #287bdd;
+        }
+
+        &:hover {
+            background-color: #287bdd;
+            transform: scale(1.05);
+            color: #fff !important;
+
+            svg {
+                color: #fff;
+            }
+        }
+
+        a {
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    }
+}
