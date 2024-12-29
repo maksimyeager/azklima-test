@@ -8,7 +8,7 @@
     font-family: "Inter", serif;
 }
 
-body{
+body {
     overflow-x: hidden;
 }
 
@@ -23,24 +23,43 @@ body.no-scroll {
     padding: 0 15px;
 }
 
-.banner{
+.banner {
+    position: relative;
     width: 100%;
     height: 100vh;
     background-image: url("../assets/banner.jpg");
     background-size: cover;
 
-    @media (max-width:768px) {
+    @media (max-width: 768px) {
         max-height: 480px;
     }
 
     @media (max-width: 576px) {
         background-position: (20%, 50%);
     }
+
+    a {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+}
+
+.banner-swiper{
+    height: 100%;
+}
+
+.banner-swiper img {
+    object-fit: cover;
 }
 
 .swiper {
     img {
         width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 }
 

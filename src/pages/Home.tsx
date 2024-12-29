@@ -1,7 +1,7 @@
 import React from "react";
-import boxSvg from "../assets/icons/box.svg";
-import handsSvg from "../assets/icons/hands.svg";
-import noteSvg from "../assets/icons/note.svg";
+// import boxSvg from "../assets/icons/box.svg";
+// import handsSvg from "../assets/icons/hands.svg";
+// import noteSvg from "../assets/icons/note.svg";
 import Banner from "../components/Banner";
 import Partners from "../components/Partners";
 import { GrUserWorker } from "react-icons/gr";
@@ -49,7 +49,7 @@ const Home: React.FC = () => {
                 </div>
             </div>
             <Partners />
-            <div className="indicators">
+            {/* <div className="indicators">
                 <h2 className="title-1">GÖSTƏRİCİLƏR</h2>
                 <div className="container">
                     <div className="indicator">
@@ -70,7 +70,7 @@ const Home: React.FC = () => {
                         <p className="indicator__untitle">Servislərimiz​</p>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </>
     );
 };

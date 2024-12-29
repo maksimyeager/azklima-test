@@ -1,12 +1,57 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/navigation";
 import { GrFormPrevious } from "react-icons/gr";
 import { GrFormNext } from "react-icons/gr";
-import partner from "../assets/brand.jpg";
+
+import partner1 from "../assets/partners/partner-1.jpg";
+import partner2 from "../assets/partners/partner-2.jpg";
+import partner3 from "../assets/partners/partner-3.jpg";
+import partner4 from "../assets/partners/partner-4.jpg";
+import partner5 from "../assets/partners/partner-5.jpg";
+import partner6 from "../assets/partners/partner-6.jpg";
+import partner7 from "../assets/partners/partner-7.jpg";
+import partner8 from "../assets/partners/partner-8.jpg";
+import partner9 from "../assets/partners/partner-9.jpg";
+import partner10 from "../assets/partners/partner-10.jpg";
+import partner11 from "../assets/partners/partner-11.jpg";
+import partner12 from "../assets/partners/partner-12.jpg";
+import partner13 from "../assets/partners/partner-13.jpg";
+import partner14 from "../assets/partners/partner-14.jpg";
+import partner15 from "../assets/partners/partner-15.jpg";
+import partner16 from "../assets/partners/partner-16.jpg";
+import partner17 from "../assets/partners/partner-17.jpg";
+import partner18 from "../assets/partners/partner-18.jpg";
+import partner19 from "../assets/partners/partner-19.jpg";
+import partner20 from "../assets/partners/partner-20.jpg";
+
+const partners = [
+    { imageUrl: partner1 },
+    { imageUrl: partner2 },
+    { imageUrl: partner3 },
+    { imageUrl: partner4 },
+    { imageUrl: partner5 },
+    { imageUrl: partner6 },
+    { imageUrl: partner7 },
+    { imageUrl: partner8 },
+    { imageUrl: partner9 },
+    { imageUrl: partner10 },
+    { imageUrl: partner11 },
+    { imageUrl: partner12 },
+    { imageUrl: partner13 },
+    { imageUrl: partner14 },
+    { imageUrl: partner15 },
+    { imageUrl: partner16 },
+    { imageUrl: partner17 },
+    { imageUrl: partner18 },
+    { imageUrl: partner19 },
+    { imageUrl: partner20 },
+];
+
 const Partners: React.FC = () => {
     return (
         <div className="partners">
@@ -24,9 +69,10 @@ const Partners: React.FC = () => {
             <div className="partners__slider">
                 <Swiper
                     className="partners-swiper"
-                    spaceBetween={0}
+                    spaceBetween={30}
                     slidesPerView={1}
                     loop={true}
+                    autoplay={{delay: 3000}}
                     breakpoints={{
                         1024: {
                             slidesPerView: 4,
@@ -45,32 +91,15 @@ const Partners: React.FC = () => {
                         nextEl: "#partners-next-slide",
                         prevEl: "#partners-prev-slide",
                     }}
-                    modules={[Navigation]}
+                    modules={[Navigation, Autoplay]}
                 >
-                    <SwiperSlide>
-                        <img src={partner} alt={"Partner"} />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img src={partner} alt={"Partner"} />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img src={partner} alt={"Partner"} />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img src={partner} alt={"Partner"} />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img src={partner} alt={"Partner"} />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img src={partner} alt={"Partner"} />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img src={partner} alt={"Partner"} />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img src={partner} alt={"Partner"} />
-                    </SwiperSlide>
+                    {partners.map((partner, index) => {
+                        return (
+                            <SwiperSlide key={index}>
+                                <img src={partner.imageUrl} alt={"Partner"} />
+                            </SwiperSlide>
+                        );
+                    })}
                 </Swiper>
             </div>
         </div>
