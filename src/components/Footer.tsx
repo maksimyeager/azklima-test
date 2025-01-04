@@ -39,7 +39,6 @@ const categories = [
     },
 ];
 
-
 const Footer: React.FC = () => {
     return (
         <footer className="footer">
@@ -140,22 +139,30 @@ const Footer: React.FC = () => {
                         <div className="footer__list-title">MəhsullarIımız</div>
                         <div className="footer__list">
                             <ul>
-                                {
-                                    categories.slice(0, 7).map((category) => {
-                                        return <li><Link to={category.path}>{category.name}</Link></li>
-                                    })
-                                }
+                                {categories.slice(0, 7).map((category, index) => {
+                                    return (
+                                        <li key={index}>
+                                            <Link to={category.path}>
+                                                {category.name}
+                                            </Link>
+                                        </li>
+                                    );
+                                })}
                             </ul>
                         </div>
                     </div>
                     <div className="footer__products">
                         <div className="footer__list">
                             <ul className="untitled-list">
-                            {
-                                    categories.slice(7).map((category) => {
-                                        return <li><Link to={category.path}>{category.name}</Link></li>
-                                    })
-                                }
+                                {categories.slice(7).map((category, index) => {
+                                    return (
+                                        <li key={index + 7}>
+                                            <Link to={category.path}>
+                                                {category.name}
+                                            </Link>
+                                        </li>
+                                    );
+                                })}
                             </ul>
                         </div>
                     </div>

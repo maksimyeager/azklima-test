@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
-import { Product } from "../pages/Product";
+import { Product } from "../services/products";
 import { fetchProducts } from "../services/products";
 
 const productsCategories = [

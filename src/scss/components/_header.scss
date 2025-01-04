@@ -43,13 +43,21 @@
         justify-content: space-between;
         gap: 5px;
 
-        li{
+        &-item{
             transition: all 0.3s ease;
 
             &:hover{
                 transform: scale(1.05);
             }
         }
+        .header__list-item:nth-child(2){
+            transition: none;
+
+            &:hover{
+                transform: none;
+            }
+        }
+
 
 
         .active {
