@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/navigation";
+import { Autoplay } from "swiper/modules";
 import image1 from "../assets/banner/banner-1.jpg";
 import image2 from "../assets/banner/banner-2.jpg";
 import image3 from "../assets/banner/banner-3.jpg";
@@ -16,7 +17,11 @@ const Banner: React.FC = () => {
                 spaceBetween={0}
                 slidesPerView={1}
                 loop={true}
-                autoplay={{ delay: 3000 }}
+                autoplay={{
+                    delay: 3000,
+                    disableOnInteraction: false,
+                }}
+                modules={[Autoplay]}
             >
                 <SwiperSlide>
                     <Link to="/products/thermona"></Link>

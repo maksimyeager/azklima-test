@@ -1,7 +1,4 @@
 import React from "react";
-// import boxSvg from "../assets/icons/box.svg";
-// import handsSvg from "../assets/icons/hands.svg";
-// import noteSvg from "../assets/icons/note.svg";
 import Banner from "../components/Banner";
 import Partners from "../components/Partners";
 import { GrUserWorker } from "react-icons/gr";

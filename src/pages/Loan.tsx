@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import FileUploader from "../components/FileUploader";
+import DataInput from "../components/DataInput"; // Импортируем кастомный DataInput
 
 interface FormData {
     firstName: string;
@@ -31,17 +32,6 @@ const Loan: React.FC = () => {
     ) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
-        setFormData({
-            firstName: "",
-            lastName: "",
-            birthDate: "",
-            phoneNumber: "",
-            file: null,
-            idSerialNumber: "",
-            registrationAddress: "",
-            residentialAddress: "",
-            desiredProducts: "",
-        });
     };
 
     const handleSubmit = (e: React.FormEvent) => {
@@ -64,7 +54,7 @@ const Loan: React.FC = () => {
                                         htmlFor="firstName"
                                         className="form__label"
                                     >
-                                        Adınız* 
+                                        Adınız*
                                     </label>
                                     <input
                                         type="text"
@@ -105,14 +95,14 @@ const Loan: React.FC = () => {
                                     >
                                         Doğum tarixi
                                     </label>
-                                    <input
-                                        type="date"
-                                        id="birthDate"
-                                        name="birthDate"
-                                        className="form__input"
+                                    <DataInput
                                         value={formData.birthDate}
-                                        onChange={handleChange}
-                                        required
+                                        onChange={(value) =>
+                                            setFormData({
+                                                ...formData,
+                                                birthDate: value,
+                                            })
+                                        }
                                     />
                                 </div>
                                 <div className="form__group">

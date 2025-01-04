@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import { Product } from "../pages/Product";
-
+import { fetchProducts } from "../services/products";
 
 const productsCategories = [
     { categotyTitle: "Boylerlər", categoryKey: "boylerler" },
@@ -50,24 +50,26 @@ const productsCategories = [
 const Products: React.FC = () => {
     const { category } = useParams<{ category: string }>();
     const [products, setProducts] = useState<Product[]>([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const fetchProducts = async () => {
+        const fetchProductsByCategory = async () => {
             try {
-                setProducts([])
-                const response = await axios.get(
-                    `https://676e8dbcdf5d7dac1ccb03cd.mockapi.io/products?category=${category}`
+                setLoading(true);
+                const allProducts = await fetchProducts();
+                const filteredProducts = allProducts.filter(
+                    (product) => product.category === category
                 );
-                setProducts(response.data);
+                setProducts(filteredProducts);
             } catch (error) {
                 console.error("Ошибка при получении данных:", error);
+            } finally {
+                setLoading(false);
             }
         };
 
-        fetchProducts();
+        fetchProductsByCategory();
     }, [category]);
-
-    console.log(products);
 
     const productsTitle = productsCategories.find(
         (item) => item.categoryKey === category
@@ -80,7 +82,10 @@ const Products: React.FC = () => {
                 <div className="products__wrapper">
                     {products.map((product) => {
                         return (
-                            <Link to={`/product/${product.id}`} key={product.id}>
+                            <Link
+                                to={`/product/${product.id}`}
+                                key={product.id}
+                            >
                                 <div key={product.id} className="product-block">
                                     <div className="product-block__image">
                                         <img

@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import FileUploader from "../components/FileUploader";
+import DataInput from "../components/DataInput";
 
 interface FormData {
     firstName: string;
     lastName: string;
-    birthDate: string;
+    birthDate: string; // Формат dd/mm/yyyy
     phoneNumber: string;
     file: File | null;
 }
@@ -23,16 +24,13 @@ const MastersCollaborate: React.FC = () => {
         setFormData({ ...formData, [name]: value });
     };
 
+    const handleDateChange = (value: string) => {
+        setFormData({ ...formData, birthDate: value });
+    };
+
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         console.log("Form Data Submitted:", formData);
-        setFormData({
-            firstName: "",
-            lastName: "",
-            birthDate: "",
-            phoneNumber: "",
-            file: null,
-        });
     };
 
     return (
@@ -91,14 +89,9 @@ const MastersCollaborate: React.FC = () => {
                                     >
                                         Doğum tarixi
                                     </label>
-                                    <input
-                                        type="date"
-                                        id="birthDate"
-                                        name="birthDate"
-                                        className="form__input"
+                                    <DataInput
                                         value={formData.birthDate}
-                                        onChange={handleChange}
-                                        required
+                                        onChange={handleDateChange}
                                     />
                                 </div>
                                 <div className="form__group">

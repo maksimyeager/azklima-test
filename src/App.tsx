@@ -13,6 +13,18 @@ import Loan from "./pages/Loan.tsx";
 import Products from "./pages/Products.tsx";
 import Product from "./pages/Product.tsx";
 import PageTitle from "./utils/pageTitle.ts";
+import { fetchProducts } from "./services/products.ts";
+
+const getProducts = async () => {
+    try {
+        const products = await fetchProducts();
+        console.log("Products:", products);
+    } catch (error) {
+        console.error("Failed to fetch products:", error);
+    }
+};
+
+getProducts();
 
 const App = () => {
     return (
