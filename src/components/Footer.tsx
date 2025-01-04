@@ -8,6 +8,38 @@ import instagramSvg from "../assets/icons/instagram.svg";
 import facebookSvg from "../assets/icons/facebook.svg";
 import linkedinSvg from "../assets/icons/linkedin.svg";
 
+const categories = [
+    { name: "Boylerlər", path: "/products/boylerler" },
+    { name: "Radiatorlar", path: "/products/radiatorlar" },
+    { name: "Dəsmal Qurudanlar", path: "/products/desmal-qurudanlar" },
+    {
+        name: "İvar Markalı Məhsullar",
+        path: "/products/ivar-markali-mehsullar",
+    },
+    {
+        name: "Su – Qaz – Elektrik Tənzimləyiciləri",
+        path: "/products/su-qaz-elektrik-tenzimleyicileri",
+    },
+    { name: "Nasoslar", path: "/products/nasoslar" },
+    { name: "Kas Məhsulları", path: "/products/kas-mehsullari" },
+    { name: "Yapışdırıcılar", path: "/products/yapishdiricilar" },
+    { name: "Xomutlar", path: "/products/xomutlar" },
+    { name: "Kanalizasiya Boruları", path: "/products/kanalizasiya-borulari" },
+    {
+        name: "Çetin Strafor və Pert borular",
+        path: "/products/cetin-strafor-pert-borular",
+    },
+    {
+        name: "Unidelta (boru və fittinqlər)",
+        path: "/products/unidelta-boru-ve-fittings",
+    },
+    {
+        name: "Su Filtrləri və Kartriclər",
+        path: "/products/su-filtrleri-ve-kartricler",
+    },
+];
+
+
 const Footer: React.FC = () => {
     return (
         <footer className="footer">
@@ -108,29 +140,22 @@ const Footer: React.FC = () => {
                         <div className="footer__list-title">MəhsullarIımız</div>
                         <div className="footer__list">
                             <ul>
-                                <li>Boylerlər</li>
-                                <li>Radiatorlar</li>
-                                <li>Dəsmal Qurudanlar</li>
-                                <li>İvar markalı məhsullar</li>
-                                <li>
-                                    Su – qaz – elektrik <br /> tənzimləyiciləri
-                                </li>
-                                <li>Nasoslar</li>
-                                <li>Kas məhsulları</li>
+                                {
+                                    categories.slice(0, 7).map((category) => {
+                                        return <li><Link to={category.path}>{category.name}</Link></li>
+                                    })
+                                }
                             </ul>
                         </div>
                     </div>
                     <div className="footer__products">
                         <div className="footer__list">
                             <ul className="untitled-list">
-                                <li>Yapışdırıcılar</li>
-                                <li>Xomutlar</li>
-                                <li>Kanalizasiya boruları</li>
-                                <li>
-                                    Çetin strafor və pert <br /> borular
-                                </li>
-                                <li>Unidelta (boru və fittinqlər)</li>
-                                <li>Su filtrləri və kartriclər</li>
+                            {
+                                    categories.slice(7).map((category) => {
+                                        return <li><Link to={category.path}>{category.name}</Link></li>
+                                    })
+                                }
                             </ul>
                         </div>
                     </div>
