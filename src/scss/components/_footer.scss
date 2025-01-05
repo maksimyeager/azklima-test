@@ -30,11 +30,13 @@
         padding-top: 60px;
         padding-bottom: 15px;
         border-bottom: 3px solid #287bdd;
-        display: flex;
+        display: grid;
+        grid-template-columns: 330px 1fr 1fr 1fr;
         justify-content: space-between;
         gap: 30px;
 
         @media (max-width: 768px) {
+            display: flex;
             flex-direction: column;
         }
     }
