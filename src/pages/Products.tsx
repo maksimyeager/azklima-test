@@ -1,50 +1,53 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import { Product } from "../services/products";
 import { fetchProducts } from "../services/products";
 
 const productsCategories = [
-    { categotyTitle: "Boylerlər", categoryKey: "boylerler" },
-    { categotyTitle: "Warmhaus", categoryKey: "warmhaus" },
-    { categotyTitle: "Thermona", categoryKey: "thermona" },
-    { categotyTitle: "Combini", categoryKey: "combini" },
-    { categotyTitle: "Prestige", categoryKey: "prestige" },
+    { categoryTitle: "Boylerlər", categoryKey: "boylerler" },
+    { categoryTitle: "Warmhaus", categoryKey: "warmhaus" },
+    { categoryTitle: "Thermona", categoryKey: "thermona" },
+    { categoryTitle: "Combini", categoryKey: "combini" },
+    { categoryTitle: "Prestige", categoryKey: "prestige" },
     {
-        categotyTitle: "New Optimal",
+        categoryTitle: "New Optimal",
         categoryKey: "new-optimal",
     },
-    { categotyTitle: "Comfort", categoryKey: "comfort" },
-    { categotyTitle: "Radiatorlar", categoryKey: "radiatorlar" },
-    { categotyTitle: "Xomutlar", categoryKey: "xomutlar" },
-    { categotyTitle: "Dəsmal Qurudanlar", categoryKey: "desmal-qurudanlar" },
+    { categoryTitle: "Comfort", categoryKey: "comfort" },
+    { categoryTitle: "Radiatorlar", categoryKey: "radiatorlar" },
+    { categoryTitle: "Xomutlar", categoryKey: "xomutlar" },
+    { categoryTitle: "Dəsmal Qurudanlar", categoryKey: "desmal-qurudanlar" },
     {
-        categotyTitle: "Kanalizasiya Boruları",
+        categoryTitle: "Kanalizasiya Boruları",
         categoryKey: "kanalizasiya-borulari",
     },
     {
-        categotyTitle: "İvar Markalı Məhsullar",
+        categoryTitle: "Duş Kanalları Və Süzgəçlər",
+        categoryKey: "dus-kanallari-ve-suzgecler",
+    },
+    {
+        categoryTitle: "İvar Markalı Məhsullar",
         categoryKey: "ivar-markali-mehsullar",
     },
     {
-        categotyTitle: "Çetin Strafor və Pert borular",
+        categoryTitle: "Çetin Strafor və Pert borular",
         categoryKey: "cetin-strafor-pert-borular",
     },
     {
-        categotyTitle: "Su – Qaz – Elektrik Tənzimləyiciləri",
+        categoryTitle: "Su – Qaz – Elektrik Tənzimləyiciləri",
         categoryKey: "su-qaz-elektrik-tenzimleyicileri",
     },
     {
-        categotyTitle: "Unidelta (boru və fittinqlər)",
+        categoryTitle: "Unidelta (boru və fittinqlər)",
         categoryKey: "unidelta-boru-ve-fittings",
     },
-    { categotyTitle: "Nasoslar", categoryKey: "nasoslar" },
-    { categotyTitle: "Kas Məhsulları", categoryKey: "kas-mehsullari" },
+    { categoryTitle: "Nasoslar", categoryKey: "nasoslar" },
+    { categoryTitle: "Kas Məhsulları", categoryKey: "kas-mehsullari" },
     {
-        categotyTitle: "Su Filtrləri və Kartriclər",
+        categoryTitle: "Su Filtrləri və Kartriclər",
         categoryKey: "su-filtrleri-ve-kartricler",
     },
-    { categotyTitle: "Yapışdırıcılar", categoryKey: "yapishdiricilar" },
+    { categoryTitle: "Yapışdırıcılar", categoryKey: "yapishdiricilar" },
 ];
 
 const Products: React.FC = () => {
@@ -73,7 +76,7 @@ const Products: React.FC = () => {
 
     const productsTitle = productsCategories.find(
         (item) => item.categoryKey === category
-    )?.categotyTitle;
+    )?.categoryTitle;
 
     return (
         <div className="products">

@@ -9,6 +9,10 @@ const categories = [
     { name: "Dəsmal Qurudanlar", path: "/products/desmal-qurudanlar" },
     { name: "Kanalizasiya Boruları", path: "/products/kanalizasiya-borulari" },
     {
+        name: "Duş Kanalları Və Süzgəçlər",
+        path: "/products/dus-kanallari-ve-suzgecler",
+    },
+    {
         name: "İvar Markalı Məhsullar",
         path: "/products/ivar-markali-mehsullar",
     },

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaChevronDown} from "react-icons/fa";
+import { FaChevronDown } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const categories = [
@@ -23,6 +23,10 @@ const categories = [
     { name: "Xomutlar", path: "/products/xomutlar" },
     { name: "Dəsmal Qurudanlar", path: "/products/desmal-qurudanlar" },
     { name: "Kanalizasiya Boruları", path: "/products/kanalizasiya-borulari" },
+    {
+        name: "Duş Kanalları Və Süzgəçlər",
+        path: "/products/dus-kanallari-ve-suzgecler",
+    },
     {
         name: "İvar Markalı Məhsullar",
         path: "/products/ivar-markali-mehsullar",

@@ -1,5 +1,5 @@
 .products {
-    padding-top: 60px;
+    padding-top: 120px;
 }
 
 .products__wrapper {
@@ -50,7 +50,7 @@
 }
 
 .product {
-    padding-top: 60px;
+    padding-top: 120px;
 
     &__wrapper {
         display: grid;
@@ -94,6 +94,35 @@
             object-fit: contain;
             max-width: 350px;
             max-height: 280px;
+        }
+    }
+}
+
+.product__chars {
+    margin-top: 60px;
+    .product__table {
+        width: 100%;
+        border-spacing: 0;
+        border-collapse: collapse;
+
+        thead {
+            background-color: #d9edf7;
+        }
+
+        th,td {
+            padding: 10px;
+            text-align: left;
+            font-size: 16px;
+        }
+
+        tbody{
+            tr{
+                border-top: 1px solid #ddd;
+            }
+
+            tr:nth-child(2n){
+                background-color: #f9f9f9;
+            }
         }
     }
 }
