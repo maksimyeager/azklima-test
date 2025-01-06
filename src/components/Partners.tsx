@@ -21,11 +21,11 @@ import partner10 from "../assets/partners/partner-10.jpg";
 import partner11 from "../assets/partners/partner-11.jpg";
 import partner12 from "../assets/partners/partner-12.jpg";
 import partner13 from "../assets/partners/partner-13.jpg";
-import partner14 from "../assets/partners/partner-14.jpg";
+import partner14 from "../assets/partners/partner-14.png";
 import partner15 from "../assets/partners/partner-15.jpg";
 import partner16 from "../assets/partners/partner-16.jpg";
 import partner17 from "../assets/partners/partner-17.jpg";
-import partner18 from "../assets/partners/partner-18.jpg";
+import partner18 from "../assets/partners/partner-18.png";
 import partner19 from "../assets/partners/partner-19.jpg";
 import partner20 from "../assets/partners/partner-20.jpg";
 

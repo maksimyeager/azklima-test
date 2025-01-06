@@ -59,9 +59,12 @@ type CategoriesProps = {
 const Categories: React.FC<CategoriesProps> = ({ closeDropdown }) => {
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-    const handleCategoryClick = (e: React.MouseEvent, index: number) => {
-        e.preventDefault();
-        setActiveIndex(activeIndex === index ? null : index);
+    const handleMouseEnter = (index: number) => {
+        setActiveIndex(index);
+    };
+
+    const handleMouseLeave = () => {
+        setActiveIndex(null);
     };
 
     const handleLinkClick = () => {
@@ -83,9 +86,7 @@ const Categories: React.FC<CategoriesProps> = ({ closeDropdown }) => {
                                 <a
                                     href="#"
                                     className="categories__link"
-                                    onClick={(e) =>
-                                        handleCategoryClick(e, index)
-                                    }
+                                    onMouseEnter={() => handleMouseEnter(index)}
                                 >
                                     {category.name}
                                     <FaChevronDown
@@ -97,7 +98,8 @@ const Categories: React.FC<CategoriesProps> = ({ closeDropdown }) => {
                                     />
                                 </a>
                                 {activeIndex === index && (
-                                    <ul className="dropdown">
+                                    
+                                    <ul className="dropdown" onMouseLeave={handleMouseLeave}>
                                         {category.subcategories.map(
                                             (subcategory, subIndex) => (
                                                 <li key={subIndex}>

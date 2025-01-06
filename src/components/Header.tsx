@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { FaChevronDown} from "react-icons/fa";
+import { FaChevronDown } from "react-icons/fa";
 import logo from "../assets/logo.png";
 import MobileNavbar from "./MobileNavbar";
 import Categories from "./Categories";
@@ -19,18 +19,18 @@ const Header: React.FC = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const location = useLocation();
 
-    const handleDropdownClick = (e: React.MouseEvent) => {
-        e.preventDefault();
-        setDropdownOpen(!dropdownOpen);
+    const handleMouseEnter = () => {
+        setDropdownOpen(true);
+    };
+
+    const handleMouseLeave = () => {
+        setDropdownOpen(false);
     };
 
     const handleCloseNavbar = () => {
         setOpen(false);
     };
-
-    const handleCloseDropdown = () => {
-        setDropdownOpen(false);
-    };
+    
 
     return (
         <>
@@ -54,12 +54,10 @@ const Header: React.FC = () => {
                                             className={`header__list-item ${
                                                 isActive ? "active" : ""
                                             }`}
+                                            onMouseEnter={handleMouseEnter}
+                                            onMouseLeave={handleMouseLeave}
                                         >
-                                            <a
-                                                href="#"
-                                                onClick={handleDropdownClick}
-                                                className="categories__link"
-                                            >
+                                            <a href="#" className="categories__link">
                                                 {link.name}
                                                 <FaChevronDown
                                                     className={`icon-1 ${
@@ -70,11 +68,7 @@ const Header: React.FC = () => {
                                                 />
                                             </a>
                                             {dropdownOpen && (
-                                                <Categories
-                                                    closeDropdown={
-                                                        handleCloseDropdown
-                                                    }
-                                                />
+                                                <Categories closeDropdown={handleMouseLeave}/>
                                             )}
                                         </li>
                                     );
@@ -87,10 +81,7 @@ const Header: React.FC = () => {
                                             isActive ? "active" : ""
                                         }`}
                                     >
-                                        <Link
-                                            to={link.path}
-                                            onClick={handleCloseDropdown}
-                                        >
+                                        <Link to={link.path}>
                                             {link.name}
                                         </Link>
                                     </li>
