@@ -36,6 +36,7 @@ const Banner: React.FC = () => {
                     <img src={image3} alt="Banner 3" />
                 </SwiperSlide>
             </Swiper>
+            <img  className="banner--mobile-img" src={image1} alt=""/>
         </div>
     );
 };
