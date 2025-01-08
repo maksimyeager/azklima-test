@@ -42,15 +42,15 @@ const Banner: React.FC = () => {
                     <img src={image4} alt="Banner 4" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <a href="https://alcaplast.shop/" target="_blank"></a>
+                    <a href="https://www.karpan.com.tr/" target="_blank"></a>
                     <img src={image5} alt="Banner 4" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <a href="/products/warmhaus" target="_blank"></a>
+                    <a href="https://alcaplast.shop/" target="_blank"></a>
                     <img src={image6} alt="Banner 4" />
                 </SwiperSlide>
             </Swiper>
-            <img  className="banner--mobile-img" src={image1} alt=""/>
+            <img className="banner--mobile-img" src={image1} alt="" />
         </div>
     );
 };
