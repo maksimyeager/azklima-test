@@ -5,11 +5,16 @@ interface Database {
         Tables: {
             products: {
                 Row: Product;
-                Insert: Omit<Product, "id">; 
-                Update: Partial<Product>; 
+                Insert: Omit<Product, "id">;
+                Update: Partial<Product>;
             };
         };
     };
+}
+
+export interface Characteristic {
+    name: string;
+    values: string[];
 }
 
 export interface Product {
@@ -17,8 +22,8 @@ export interface Product {
     title: string;
     category: string;
     imageUrl: string;
+    characteristics: Characteristic[];
 }
-
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseKey = import.meta.env.VITE_SUPABASE_KEY;

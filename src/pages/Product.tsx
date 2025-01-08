@@ -1,16 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { fetchProducts, Product as ProductType } from "../services/products"; // Импортируйте вашу функцию и тип
-
-const chars = [
-    {
-        "name": "TUTUM (lt)",
-        "values": ["100 lt", "160 lt", "200 lt", "300 lt", "500 lt", "1000 lt"],
-    },
-];
-
-const headers = chars.map((char) => char.name);
-const rows = chars.map((char) => char.values);
+import {
+    Characteristic,
+    fetchProducts,
+    Product as ProductType,
+} from "../services/products"; // Импортируйте вашу функцию и тип
 
 const Product: React.FC = () => {
     const { id } = useParams<{ id: string }>();
@@ -23,6 +17,7 @@ const Product: React.FC = () => {
                 const products = await fetchProducts();
                 const foundProduct = products.find((p) => p.id === id);
                 setProduct(foundProduct);
+                console.log(foundProduct);
             } catch (err) {
                 console.error("Error fetching product:", err);
             } finally {
@@ -33,6 +28,17 @@ const Product: React.FC = () => {
         fetchProductById();
     }, [id]);
 
+    const chars: Characteristic[] | undefined = product?.characteristics;
+
+    console.log(
+        chars,
+        chars?.map((char) => char.name)
+    );
+    const headers = chars?.map((char) => char.name);
+    const rows = chars?.map((char) => char.values);
+    // const headers: string[] = chars.map((char) => char.name);
+    // const rows: string[][] = chars.map((char) => char.values);
+    // console.log(rows);
     return (
         <div className="product">
             <div className="container">
@@ -76,7 +82,7 @@ const Product: React.FC = () => {
                         </div>
                     </>
                 ) : (
-                    <p>Загрузка...</p>
+                    <></>
                 )}
             </div>
         </div>

@@ -9,6 +9,8 @@ import image1 from "../assets/banner/banner-1.jpg";
 import image2 from "../assets/banner/banner-2.jpg";
 import image3 from "../assets/banner/banner-3.jpg";
 import image4 from "../assets/banner/banner-4.jpg";
+import image5 from "../assets/banner/banner-5.jpg";
+import image6 from "../assets/banner/banner-6.jpg";
 
 const Banner: React.FC = () => {
     return (
@@ -39,6 +41,14 @@ const Banner: React.FC = () => {
                 <SwiperSlide>
                     <Link to="/products/warmhaus"></Link>
                     <img src={image4} alt="Banner 4" />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <Link to="/products/warmhaus"></Link>
+                    <img src={image5} alt="Banner 4" />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <Link to="/products/warmhaus"></Link>
+                    <img src={image6} alt="Banner 4" />
                 </SwiperSlide>
             </Swiper>
             <img  className="banner--mobile-img" src={image1} alt=""/>
