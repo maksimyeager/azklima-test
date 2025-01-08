@@ -4,8 +4,8 @@ import { fetchProducts, Product as ProductType } from "../services/products"; //
 
 const chars = [
     {
-        name: "TUTUM (lt)",
-        values: ["100 lt", "160 lt", "200 lt", "300 lt", "500 lt", "1000 lt"],
+        "name": "TUTUM (lt)",
+        "values": ["100 lt", "160 lt", "200 lt", "300 lt", "500 lt", "1000 lt"],
     },
 ];
 
