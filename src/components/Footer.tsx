@@ -75,7 +75,7 @@ const Footer: React.FC = () => {
                                         <br />
                                         Satış Mərkəzi: +994 50 225 69 89
                                         <br />
-                                        Marketinqmərkəzi: +994103045555
+                                        Marketinq : +994 10 304 55 55
                                     </p>
                                 </div>
                             </div>
@@ -188,7 +188,7 @@ const Footer: React.FC = () => {
                                     <br />
                                     Satış Mərkəzi: +994 50 225 69 89
                                     <br />
-                                    Marketinq Mərkəzi: +994 10 304 55 55
+                                    Marketinq: +994 10 304 55 55
                                 </p>
                             </div>
                         </div>
