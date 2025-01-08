@@ -54,14 +54,11 @@
 
     &__wrapper {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
+        grid-template-columns: 1fr;
         gap: 60px;
 
         @media (max-width: 576px) {
             grid-template-columns: 1fr;
-            display: flex;
-            flex-direction: column-reverse;
         }
     }
 
@@ -69,7 +66,7 @@
         font-size: 36px;
         font-weight: 700;
         color: #287bdd;
-        margin-bottom: 15px;
+        text-align: center;
 
         @media (max-width: 576px) {
             text-align: center;

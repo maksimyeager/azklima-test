@@ -12,7 +12,7 @@ import partner1 from "../assets/partners/partner-1.jpg";
 import partner2 from "../assets/partners/partner-2.jpg";
 import partner3 from "../assets/partners/partner-3.jpg";
 import partner4 from "../assets/partners/partner-4.jpg";
-import partner5 from "../assets/partners/partner-5.jpg";
+import partner5 from "../assets/partners/cs.png";
 import partner6 from "../assets/partners/partner-6.jpg";
 import partner7 from "../assets/partners/partner-7.jpg";
 import partner8 from "../assets/partners/partner-8.jpg";

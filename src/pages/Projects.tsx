@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Partners from "../components/Partners";
 import playSvg from "../assets/icons/play.svg";
@@ -30,24 +30,29 @@ const projects = [
     { imageUrl: project12 },
 ];
 
+import video from "../assets/videos/video-1.mp4";
+
 const Projects: React.FC = () => {
+    const [openVideoIndex, setOpenVideoIndex] = useState<number | null>(null);
+
+    const handleVideoClick = (index: number) => {
+        setOpenVideoIndex(openVideoIndex === index ? null : index); // Если кликнуть по открытому видео, оно закроется
+    };
+
     return (
         <div className="projects">
             <div className="projects__block">
                 <div className="container">
                     <h1 className="title-1">Şəkillər</h1>
-
                     <div className="photos">
-                        {projects.map((project, index) => {
-                            return (
-                                <div className="photo" key={index}>
-                                    <img
-                                        src={project.imageUrl}
-                                        alt={`Project ${index}`}
-                                    />
-                                </div>
-                            );
-                        })}
+                        {projects.map((project, index) => (
+                            <div className="photo" key={index}>
+                                <img
+                                    src={project.imageUrl}
+                                    alt={`Project ${index}`}
+                                />
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>
@@ -55,36 +60,34 @@ const Projects: React.FC = () => {
                 <div className="container">
                     <h1 className="title-1">Videolar</h1>
                     <div className="videos">
-                        <div className="video">
-                            <div className="video--overlay">
-                                <img
-                                    className="video--icon"
-                                    src={playSvg}
-                                    alt=""
-                                />
-                            </div>
-                            <img src={project1} alt="" />
-                        </div>
-                        <div className="video">
-                            <div className="video--overlay">
-                                <img
-                                    className="video--icon"
-                                    src={playSvg}
-                                    alt=""
-                                />
-                            </div>
-                            <img src={project1} alt="" />
-                        </div>
-                        <div className="video">
-                            <div className="video--overlay">
-                                <img
-                                    className="video--icon"
-                                    src={playSvg}
-                                    alt=""
-                                />
-                            </div>
-                            <img src={project1} alt="" />
-                        </div>
+                        {Array.from({ length: 3 }, (_, index) => index + 1).map(
+                            (project, index) => (
+                                <div
+                                    key={index}
+                                    className="video"
+                                    onClick={() => handleVideoClick(index)}
+                                >
+                                    <div className="video--overlay">
+                                        <img
+                                            className="video--icon"
+                                            src={playSvg}
+                                            alt=""
+                                        />
+                                    </div>
+                                    <img src={project1} alt="" />
+                                    {openVideoIndex === index && (
+                                        <div className="project-video-block">
+                                            <video
+                                                src={video}
+                                                controls
+                                                autoPlay
+                                                className="project-video"
+                                            ></video>
+                                        </div>
+                                    )}
+                                </div>
+                            )
+                        )}
                     </div>
                 </div>
             </div>

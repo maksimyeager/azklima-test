@@ -4,7 +4,11 @@ import { Product } from "../services/products";
 import { fetchProducts } from "../services/products";
 
 const productsCategories = [
-    { categoryTitle: "Boylerlər", categoryKey: "boylerler" },
+    {
+        categoryTitle: "Boylerlər",
+        categoryKey: "boylerler",
+        subcategories: ["BOYLERLƏR (İki serpantinli)", "BOYLERLƏR"],
+    },
     { categoryTitle: "Warmhaus", categoryKey: "warmhaus" },
     { categoryTitle: "Thermona", categoryKey: "thermona" },
     { categoryTitle: "Combini", categoryKey: "combini" },
