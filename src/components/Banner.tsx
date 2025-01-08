@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
@@ -27,27 +26,27 @@ const Banner: React.FC = () => {
                 modules={[Autoplay]}
             >
                 <SwiperSlide>
-                    <Link to="/products/thermona"></Link>
+                    <a href="https://www.thermona.az/" target="_blank"></a>
                     <img src={image1} alt="Banner 1" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Link to="/products/kas-mehsullari"></Link>
+                    <a href="https://kas.com.tr/" target="_blank"></a>
                     <img src={image2} alt="Banner 2" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Link to="/products/warmhaus"></Link>
+                    <a href="https://www.warmhaus.com/az" target="_blank"></a>
                     <img src={image3} alt="Banner 3" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Link to="/products/warmhaus"></Link>
+                    <a href="https://saysystems.com.tr/" target="_blank"></a>
                     <img src={image4} alt="Banner 4" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Link to="/products/warmhaus"></Link>
+                    <a href="https://alcaplast.shop/" target="_blank"></a>
                     <img src={image5} alt="Banner 4" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Link to="/products/warmhaus"></Link>
+                    <a href="/products/warmhaus" target="_blank"></a>
                     <img src={image6} alt="Banner 4" />
                 </SwiperSlide>
             </Swiper>

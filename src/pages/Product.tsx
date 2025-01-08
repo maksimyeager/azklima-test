@@ -61,15 +61,15 @@ const Product: React.FC = () => {
                             <table className="product__table">
                                 <thead>
                                     <tr>
-                                        {headers.map((header, index) => (
+                                        {headers?.map((header, index) => (
                                             <th key={index}>{header}</th>
                                         ))}
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {rows[0].map((_, rowIndex) => (
+                                    {rows?.[0].map((_, rowIndex) => (
                                         <tr key={rowIndex}>
-                                            {chars.map((char, colIndex) => (
+                                            {chars?.map((char, colIndex) => (
                                                 <td key={colIndex}>
                                                     {char.values[rowIndex] ||
                                                         "-"}
