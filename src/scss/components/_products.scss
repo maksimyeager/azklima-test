@@ -97,6 +97,8 @@
 
 .product__chars {
     margin-top: 60px;
+    max-width: 100%;
+    overflow-x: auto;
     .product__table {
         width: 100%;
         border-spacing: 0;

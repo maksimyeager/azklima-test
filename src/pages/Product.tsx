@@ -30,33 +30,29 @@ const Product: React.FC = () => {
 
     const chars: Characteristic[] | undefined = product?.characteristics;
 
-    console.log(
-        chars,
-        chars?.map((char) => char.name)
-    );
-    const headers = chars?.map((char) => char.name);
-    const rows = chars?.map((char) => char.values);
-    // const headers: string[] = chars.map((char) => char.name);
-    // const rows: string[][] = chars.map((char) => char.values);
-    // console.log(rows);
-    return (
-        <div className="product">
-            <div className="container">
-                {!loading && product ? (
-                    <>
-                        <div className="product__wrapper">
-                            <div className="product__info">
-                                <h1 className="product__title">
-                                    {product.title}
-                                </h1>
-                            </div>
-                            <div className="product__image">
-                                <img
-                                    src={product.imageUrl}
-                                    alt={product.title}
-                                />
-                            </div>
+console.log(
+    chars,
+    chars?.map((char) => char.name)
+);
+
+const headers = chars?.map((char) => char.name);
+const rows = chars?.map((char) => char.values);
+
+return (
+    <div className="product">
+        <div className="container">
+            {!loading && product ? (
+                <>
+                    <div className="product__wrapper">
+                        <div className="product__info">
+                            <h1 className="product__title">{product.title}</h1>
                         </div>
+                        <div className="product__image">
+                            <img src={product.imageUrl} alt={product.title} />
+                        </div>
+                    </div>
+                    {/* Проверка: показываем таблицу только если chars не пустой */}
+                    {chars && chars.length > 0 && (
                         <div className="product__chars">
                             <table className="product__table">
                                 <thead>
@@ -71,8 +67,7 @@ const Product: React.FC = () => {
                                         <tr key={rowIndex}>
                                             {chars?.map((char, colIndex) => (
                                                 <td key={colIndex}>
-                                                    {char.values[rowIndex] ||
-                                                        "-"}
+                                                    {char.values[rowIndex] || "-"}
                                                 </td>
                                             ))}
                                         </tr>
@@ -80,13 +75,15 @@ const Product: React.FC = () => {
                                 </tbody>
                             </table>
                         </div>
-                    </>
-                ) : (
-                    <></>
-                )}
-            </div>
+                    )}
+                </>
+            ) : (
+                <></>
+            )}
         </div>
-    );
+    </div>
+);
+
 };
 
 export default Product;
