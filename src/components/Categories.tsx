@@ -20,6 +20,8 @@ const categories = [
         ],
     },
     { name: "Radiatorlar", path: "/products/radiatorlar" },
+    { name: "Kas Məhsulları", path: "/products/kas-mehsullari" },
+
     { name: "Xomutlar", path: "/products/xomutlar" },
     { name: "Dəsmal Qurudanlar", path: "/products/desmal-qurudanlar" },
     { name: "Kanalizasiya Boruları", path: "/products/kanalizasiya-borulari" },
@@ -44,7 +46,6 @@ const categories = [
         path: "/products/unidelta-boru-ve-fittings",
     },
     { name: "Nasoslar", path: "/products/nasoslar" },
-    { name: "Kas Məhsulları", path: "/products/kas-mehsullari" },
     {
         name: "Su Filtrləri və Kartriclər",
         path: "/products/su-filtrleri-ve-kartricler",
@@ -98,8 +99,10 @@ const Categories: React.FC<CategoriesProps> = ({ closeDropdown }) => {
                                     />
                                 </a>
                                 {activeIndex === index && (
-                                    
-                                    <ul className="dropdown" onMouseLeave={handleMouseLeave}>
+                                    <ul
+                                        className="dropdown"
+                                        onMouseLeave={handleMouseLeave}
+                                    >
                                         {category.subcategories.map(
                                             (subcategory, subIndex) => (
                                                 <li key={subIndex}>

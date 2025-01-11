@@ -3,8 +3,24 @@ import { FaChevronDown } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const categories = [
+    {
+        name: "Kombilər – Qazanlar",
+        path: "",
+        subcategories: [
+            { name: "Warmhaus", path: "/products/warmhaus" },
+            { name: "Thermona", path: "/products/thermona" },
+            { name: "Combini", path: "/products/combini" },
+            { name: "Prestige", path: "/products/prestige" },
+            {
+                name: "New Optimal",
+                path: "/products/new-optimal",
+            },
+            { name: "Comfort", path: "/products/comfort" },
+        ],
+    },
     { name: "Boylerlər", path: "/products/boylerler" },
     { name: "Radiatorlar", path: "/products/radiatorlar" },
+    { name: "Kas Məhsulları", path: "/products/kas-mehsullari" },
     { name: "Xomutlar", path: "/products/xomutlar" },
     { name: "Dəsmal Qurudanlar", path: "/products/desmal-qurudanlar" },
     { name: "Kanalizasiya Boruları", path: "/products/kanalizasiya-borulari" },
@@ -29,27 +45,12 @@ const categories = [
         path: "/products/unidelta-boru-ve-fittings",
     },
     { name: "Nasoslar", path: "/products/nasoslar" },
-    { name: "Kas Məhsulları", path: "/products/kas-mehsullari" },
     {
         name: "Su Filtrləri və Kartriclər",
         path: "/products/su-filtrleri-ve-kartricler",
     },
     { name: "Yapışdırıcılar", path: "/products/yapishdiricilar" },
-    {
-        name: "Kombilər – Qazanlar",
-        path: "",
-        subcategories: [
-            { name: "Warmhaus", path: "/products/warmhaus" },
-            { name: "Thermona", path: "/products/thermona" },
-            { name: "Combini", path: "/products/combini" },
-            { name: "Prestige", path: "/products/prestige" },
-            {
-                name: "New Optimal",
-                path: "/products/new-optimal",
-            },
-            { name: "Comfort", path: "/products/comfort" },
-        ],
-    },
+    
 ];
 
 type CategoriesProps = {
