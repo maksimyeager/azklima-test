@@ -96,7 +96,22 @@ const productsCategories = [
         ],
     },
     { categoryTitle: "Nasoslar", categoryKey: "nasoslar" },
-    { categoryTitle: "Kas Məhsulları", categoryKey: "kas-mehsullari" },
+    {
+        categoryTitle: "Kas Məhsulları",
+        categoryKey: "kas-mehsullari",
+        subcategories: [
+            "PLASTİK BORULAR (PN 25*)",
+            "BİRLƏŞMƏLƏR (Fitinqlər) (PN 25*)",
+            "BİRLƏŞMƏLƏR (LATUN QRUPU Fitinqlər)",
+            "VENTİLLƏR (LATUN)",
+            "VENTİLLƏR",
+            "KOLLEKTOR VƏ YERDƏN İSİTMƏ QRUPU",
+            "FLEKS QRUPU (PASLANMAZ)",
+            "OTAQ İSTİLİK İDARƏEDİCİSİ",
+            "OTAQ İSTİLİK İDARƏEDİCİSİ (EKRANLI)",
+            "Yerden Isıtma Sistemleri",
+        ],
+    },
     {
         categoryTitle: "Su Filtrləri və Kartriclər",
         categoryKey: "su-filtrleri-ve-kartricler",
@@ -147,7 +162,8 @@ const Products: React.FC = () => {
                                 <h2 className="title-1">{subcategory}</h2>
                                 <Swiper
                                     className="products-swiper"
-                                    spaceBetween={30}
+                                    spaceBetween={30} // Отступы между слайдами
+                                    loop={true}
                                     slidesPerView={
                                         products.filter(
                                             (product) =>
@@ -161,7 +177,29 @@ const Products: React.FC = () => {
                                                       subcategory
                                               ).length
                                     }
-                                    loop={products.length > 3}
+                                    style={{
+                                        width: `${
+                                            Math.min(
+                                                products.filter(
+                                                    (product) =>
+                                                        product.subcategory ===
+                                                        subcategory
+                                                ).length,
+                                                3
+                                            ) *
+                                                340 +
+                                            (Math.min(
+                                                products.filter(
+                                                    (product) =>
+                                                        product.subcategory ===
+                                                        subcategory
+                                                ).length,
+                                                3
+                                            ) -
+                                                1) *
+                                                30
+                                        }px`,
+                                    }} // Ширина Swiper рассчитывается динамически
                                     modules={[Navigation, Autoplay]}
                                 >
                                     {products
@@ -203,10 +241,8 @@ const Products: React.FC = () => {
                         <Swiper
                             className="products-swiper"
                             spaceBetween={30}
-                            slidesPerView={
-                                products.length >= 3 ? 3 : products.length
-                            }
-                            loop={products.length > 3}
+                            loop={true}
+                            slidesPerView={products.length}
                             modules={[Navigation, Autoplay]}
                         >
                             {products.map((product, index) => (
