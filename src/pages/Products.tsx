@@ -242,7 +242,7 @@ const Products: React.FC = () => {
                             className="products-swiper"
                             spaceBetween={30}
                             loop={true}
-                            slidesPerView={products.length}
+                            slidesPerView={products.length >=3 ? 3 : products.length}
                             modules={[Navigation, Autoplay]}
                         >
                             {products.map((product, index) => (

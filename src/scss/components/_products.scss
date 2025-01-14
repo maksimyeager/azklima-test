@@ -15,12 +15,13 @@
 
     .products-swiper {
         display: inline-block; /* Подстраивает ширину под содержимое */
-        max-width: 100%; /* Чтобы не было ограничения */
-        width: auto; 
+        max-width: 1040px !important; /* Чтобы не было ограничения */
+        width: 100% !important; 
         margin-bottom: 30px;
 
         .swiper-slide {
-            width: 340px !important;
+            max-width: 340px !important;
+            width: 100%;
         }
     }
     @media (max-width: 576px) {
