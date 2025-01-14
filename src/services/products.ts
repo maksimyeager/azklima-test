@@ -23,6 +23,7 @@ export interface Product {
     category: string;
     imageUrl: string;
     characteristics?: Characteristic[];
+    subcategory?: string;
 }
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
