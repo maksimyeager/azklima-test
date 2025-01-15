@@ -3,6 +3,7 @@
 }
 
 .products__wrapper {
+    position: relative;
     display: grid;
     // grid-template-columns: repeat(3, 1fr);
     // gap: 30px clamp(1.875rem, -3.75rem + 11.719vw, 3.75rem);
@@ -14,14 +15,19 @@
     }
 
     .products-swiper {
-        display: inline-block; /* Подстраивает ширину под содержимое */
-        max-width: 1040px !important; /* Чтобы не было ограничения */
-        width: 100% !important; 
+        display: block; 
+        max-width: 1080px !important;
+        width: 100% !important;
         margin-bottom: 30px;
 
-        .swiper-slide {
+        @media (max-width: 576px) {
             max-width: 340px !important;
-            width: 100%;
+            width: 100% !important;
+        }
+
+        .swiper-slide {
+            // max-width: 340px !important;
+            // width: 100% !important;
         }
     }
     @media (max-width: 576px) {

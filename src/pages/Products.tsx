@@ -157,83 +157,72 @@ const Products: React.FC = () => {
                 {/* Отображаем подкатегории */}
                 {subcategories ? (
                     subcategories.map((subcategory, index) => (
-                        <div key={index}>
-                            <div className="products__wrapper">
-                                <h2 className="title-1">{subcategory}</h2>
-                                <Swiper
-                                    className="products-swiper"
-                                    spaceBetween={30} // Отступы между слайдами
-                                    loop={true}
-                                    slidesPerView={
-                                        products.filter(
-                                            (product) =>
-                                                product.subcategory ===
-                                                subcategory
-                                        ).length >= 3
-                                            ? 3
-                                            : products.filter(
-                                                  (product) =>
-                                                      product.subcategory ===
-                                                      subcategory
-                                              ).length
-                                    }
-                                    style={{
-                                        width: `${
-                                            Math.min(
-                                                products.filter(
-                                                    (product) =>
-                                                        product.subcategory ===
-                                                        subcategory
-                                                ).length,
-                                                3
-                                            ) *
-                                                340 +
-                                            (Math.min(
-                                                products.filter(
-                                                    (product) =>
-                                                        product.subcategory ===
-                                                        subcategory
-                                                ).length,
-                                                3
-                                            ) -
-                                                1) *
-                                                30
-                                        }px`,
-                                    }} // Ширина Swiper рассчитывается динамически
-                                    modules={[Navigation, Autoplay]}
-                                >
-                                    {products
-                                        .filter(
-                                            (product) =>
-                                                product.subcategory ===
-                                                subcategory
-                                        )
-                                        .map((product, index) => (
-                                            <SwiperSlide key={index}>
-                                                <Link
-                                                    to={`/product/${product.id}`}
-                                                    key={product.id}
-                                                >
-                                                    <div className="product-block">
-                                                        <div className="product-block__image">
-                                                            <img
-                                                                src={
-                                                                    product.imageUrl
-                                                                }
-                                                                alt={
-                                                                    product.title
-                                                                }
-                                                            />
-                                                        </div>
-                                                        <h2 className="product-block__name">
-                                                            {product.title}
-                                                        </h2>
+                        <div className="products__wrapper" key={index}>
+                            <h2 className="title-1">{subcategory}</h2>
+                            <Swiper
+                                className="products-swiper"
+                                spaceBetween={30} // Отступы между слайдами
+                                loop={true}
+                                slidesPerView={1}
+                                breakpoints={{
+                                    576: {
+                                        slidesPerView: 1,
+                                    },
+                                }}
+                                style={{
+                                    width: `${
+                                        Math.min(
+                                            products.filter(
+                                                (product) =>
+                                                    product.subcategory ===
+                                                    subcategory
+                                            ).length,
+                                            3
+                                        ) *
+                                            340 +
+                                        (Math.min(
+                                            products.filter(
+                                                (product) =>
+                                                    product.subcategory ===
+                                                    subcategory
+                                            ).length,
+                                            3
+                                        ) -
+                                            1) *
+                                            30
+                                    }px`,
+                                }}
+                                
+                                modules={[Navigation, Autoplay]}
+                            >
+                                {products
+                                    .filter(
+                                        (product) =>
+                                            product.subcategory === subcategory
+                                    )
+                                    .map((product, index) => (
+                                        <SwiperSlide key={index}>
+                                            <Link
+                                                to={`/product/${product.id}`}
+                                                key={product.id}
+                                            >
+                                                <div className="product-block">
+                                                    <div className="product-block__image">
+                                                        <img
+                                                            src={
+                                                                product.imageUrl
+                                                            }
+                                                            alt={product.title}
+                                                        />
                                                     </div>
-                                                </Link>
-                                            </SwiperSlide>
-                                        ))}
-                                </Swiper>
-                            </div>
+                                                    <h2 className="product-block__name">
+                                                        {product.title}
+                                                    </h2>
+                                                </div>
+                                            </Link>
+                                        </SwiperSlide>
+                                    ))}
+                            </Swiper>
                         </div>
                     ))
                 ) : (
@@ -242,7 +231,9 @@ const Products: React.FC = () => {
                             className="products-swiper"
                             spaceBetween={30}
                             loop={true}
-                            slidesPerView={products.length >=3 ? 3 : products.length}
+                            slidesPerView={
+                                products.length >= 3 ? 3 : products.length
+                            }
                             modules={[Navigation, Autoplay]}
                         >
                             {products.map((product, index) => (
