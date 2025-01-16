@@ -7,6 +7,7 @@ import { Autoplay } from "swiper/modules";
 import image1 from "../assets/banner/banner-1.jpg";
 import image2 from "../assets/banner/banner-2.jpg";
 import image3 from "../assets/banner/banner-3.jpg";
+import image4 from "../assets/banner/mobile-banner.jpg";
 
 const Banner: React.FC = () => {
     return (
@@ -35,7 +36,7 @@ const Banner: React.FC = () => {
                     <img src={image3} alt="Banner 3" />
                 </SwiperSlide>
             </Swiper>
-            <img className="banner--mobile-img" src={image1} alt="" />
+            <img className="banner--mobile-img" src={image4} alt="" />
         </div>
     );
 };

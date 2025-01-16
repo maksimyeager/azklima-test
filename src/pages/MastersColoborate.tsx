@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import FileUploader from "../components/FileUploader";
 import DataInput from "../components/DataInput";
+import emailjs from "@emailjs/browser";
 
 interface FormData {
     firstName: string;
     lastName: string;
-    birthDate: string; // Формат dd/mm/yyyy
+    birthDate: string;
     phoneNumber: string;
     file: File | null;
 }
@@ -28,15 +29,42 @@ const MastersCollaborate: React.FC = () => {
         setFormData({ ...formData, birthDate: value });
     };
 
+    const sendEmail = () => {
+        const emailData = {
+            firstName: formData.firstName,
+            lastName: formData.lastName,
+            birthDate: formData.birthDate,
+            phoneNumber: formData.phoneNumber,
+            file: formData.file ? formData.file.name : "Файл не прикреплён",
+        };
+
+        emailjs.send(
+            "service_re5gkzr", // Замените на ID вашего сервиса
+            "template_b26vb6f", // Замените на ID вашего шаблона
+            emailData,
+            "zPTmEOlGptBq0EI7i" // Замените на ваш публичный ключ
+        );
+    };
+
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         console.log("Form Data Submitted:", formData);
+
+        sendEmail();
+
+        setFormData({
+            firstName: "",
+            lastName: "",
+            birthDate: "",
+            phoneNumber: "",
+            file: null,
+        });
     };
 
     return (
         <div className="masters ancet-form">
             <div className="ancet-form__title">
-                <h1 className="title-1 ">Ustalar üçün əməkdaşlıq anketi</h1>
+                <h1 className="title-1">Ustalar üçün əməkdaşlıq anketi</h1>
             </div>
             <div className="container">
                 <div className="masters__form ancet__form">
