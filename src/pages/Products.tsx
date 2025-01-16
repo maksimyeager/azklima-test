@@ -124,6 +124,7 @@ const Products: React.FC = () => {
     const { category } = useParams<{ category: string }>();
     const [products, setProducts] = useState<Product[]>([]);
     const [loading, setLoading] = useState(true);
+    const [length, setLength] = useState<number>(1)
 
     useEffect(() => {
         const fetchProductsByCategory = async () => {
@@ -134,6 +135,7 @@ const Products: React.FC = () => {
                     (product) => product.category === category
                 );
                 setProducts(filteredProducts);
+                setLength(filteredProducts.length)
             } catch (error) {
                 console.error("Ошибка при получении данных:", error);
             } finally {
@@ -152,10 +154,10 @@ const Products: React.FC = () => {
 
     return (
         <div className="products">
-            {subcategories ? "" : <h1 className="title-1">{productsTitle}</h1>}
+            {!loading && subcategories ? "" : <h1 className="title-1">{productsTitle}</h1>}
             <div className="container">
                 {/* Отображаем подкатегории */}
-                {subcategories ? (
+                {subcategories ? !loading && (
                     subcategories.map((subcategory, index) => (
                         <div className="products__wrapper" key={index}>
                             <h2 className="title-1">{subcategory}</h2>
@@ -163,14 +165,25 @@ const Products: React.FC = () => {
                                 className="products-swiper"
                                 spaceBetween={30} // Отступы между слайдами
                                 loop={true}
-                                slidesPerView={1}
+                                slidesPerView={
+                                   1
+                                }
                                 breakpoints={{
-                                    576: {
-                                        slidesPerView: 1,
+                                    768: {
+                                        slidesPerView:  products.filter(
+                                            (product) =>
+                                                product.subcategory === subcategory
+                                        ).length >= 3
+                                            ? 3
+                                            : products.filter(
+                                                  (product) =>
+                                                      product.subcategory ===
+                                                      subcategory
+                                              ).length,
                                     },
                                 }}
                                 style={{
-                                    width: `${
+                                    maxWidth: `${
                                         Math.min(
                                             products.filter(
                                                 (product) =>
@@ -192,7 +205,6 @@ const Products: React.FC = () => {
                                             30
                                     }px`,
                                 }}
-                                
                                 modules={[Navigation, Autoplay]}
                             >
                                 {products
@@ -225,16 +237,25 @@ const Products: React.FC = () => {
                             </Swiper>
                         </div>
                     ))
-                ) : (
+                ) : !loading && (
                     <div className="products__wrapper">
                         <Swiper
                             className="products-swiper"
                             spaceBetween={30}
                             loop={true}
                             slidesPerView={
-                                products.length >= 3 ? 3 : products.length
+                                1
                             }
+                            breakpoints={{768: {
+                                slidesPerView: length >= 3 ? 3 : length
+                            }}}
                             modules={[Navigation, Autoplay]}
+                            style={{
+                                maxWidth: `${
+                                    Math.min(products.length, 3) * 340 +
+                                    (Math.min(products.length, 3) - 1) * 30
+                                }px`,
+                            }}
                         >
                             {products.map((product, index) => (
                                 <SwiperSlide key={index}>

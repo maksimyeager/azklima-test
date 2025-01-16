@@ -16,11 +16,11 @@
 
     .products-swiper {
         display: block; 
-        max-width: 1080px !important;
+        // max-width: 1080px !important;
         width: 100% !important;
         margin-bottom: 30px;
 
-        @media (max-width: 576px) {
+        @media (max-width: 768px) {
             max-width: 340px !important;
             width: 100% !important;
         }
@@ -28,6 +28,8 @@
         .swiper-slide {
             // max-width: 340px !important;
             // width: 100% !important;
+            display: flex;
+            justify-content: center;
         }
     }
     @media (max-width: 576px) {
