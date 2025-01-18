@@ -1,12 +1,14 @@
 .products {
     padding-top: 120px;
+
+    @media (max-width: 576px) {
+        padding-top: 60px;
+    }
 }
 
 .products__wrapper {
     position: relative;
     display: grid;
-    // grid-template-columns: repeat(3, 1fr);
-    // gap: 30px clamp(1.875rem, -3.75rem + 11.719vw, 3.75rem);
     justify-content: center;
 
     .title-1 {
@@ -14,11 +16,33 @@
         margin-bottom: 30px;
     }
 
+    .swiper-button-prev,
+    .swiper-button-next {
+        color: rgba(0, 0, 0, 0.2901960784);
+        width: 40px;
+        height: 40px;
+        background-color: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.2901960784);
+    }
+
+    .swiper-button-prev {
+    }
+
+    .swiper-button-next {
+    }
+
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+        font-size: 24px;
+    }
+
+
+    
     .products-swiper {
-        display: block; 
-        // max-width: 1080px !important;
+        display: block;
         width: 100% !important;
         margin-bottom: 30px;
+        z-index: 1;
 
         @media (max-width: 768px) {
             max-width: 340px !important;
@@ -28,8 +52,30 @@
         .swiper-slide {
             // max-width: 340px !important;
             // width: 100% !important;
+            // display: flex;
+            // justify-content: center;
+            height: auto;
+        }
+
+        button {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            color: #dddddd;
+            background-color: #ffffff !important;
+            border: 1px solid #dddddd;
             display: flex;
             justify-content: center;
+            align-items: center;
+            top: 50%;
+            z-index: 10;
+
+            &#prev {
+                left: -20px;
+            }
+            &#next {
+                right: 0;
+            }
         }
     }
     @media (max-width: 576px) {
@@ -47,6 +93,7 @@
     border: 1px solid #0000004a;
     padding: 15px;
     padding-bottom: 30px;
+    background-color: #fff;
 
     &__image {
         display: flex;
