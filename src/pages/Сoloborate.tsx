@@ -1,30 +1,30 @@
 import React, { useState } from "react";
 
 interface FormData {
-    companyName: string;
-    activityField: string;
-    registrationNumber: string;
-    contactNumber: string;
+    şirkətAdı: string;
+    fəaliyyətSahəsi: string;
+    qeydiyyatNömrəsi: string;
+    əlaqəNömrəsi: string;
     email: string;
-    companyAddress: string;
-    operationDuration: string;
-    interestedServices: string;
-    previousCollaborations: string;
-    collaborationProposal: string;
+    ünvan: string;
+    fəaliyyətMüddəti: string;
+    əməkdaşlıqXidmətləri: string;
+    əvvəlkiƏməkdaşlıqlar: string;
+    əməkdaşlıqTəklifi: string;
 }
 
 const CollaborationForm: React.FC = () => {
     const [formData, setFormData] = useState<FormData>({
-        companyName: "",
-        activityField: "",
-        registrationNumber: "",
-        contactNumber: "",
+        şirkətAdı: "",
+        fəaliyyətSahəsi: "",
+        qeydiyyatNömrəsi: "",
+        əlaqəNömrəsi: "",
         email: "",
-        companyAddress: "",
-        operationDuration: "",
-        interestedServices: "",
-        previousCollaborations: "",
-        collaborationProposal: "",
+        ünvan: "",
+        fəaliyyətMüddəti: "",
+        əməkdaşlıqXidmətləri: "",
+        əvvəlkiƏməkdaşlıqlar: "",
+        əməkdaşlıqTəklifi: "",
     });
 
     const handleChange = (
@@ -38,92 +38,106 @@ const CollaborationForm: React.FC = () => {
         e.preventDefault();
         console.log("Form Submitted:", formData);
         setFormData({
-            companyName: "",
-            activityField: "",
-            registrationNumber: "",
-            contactNumber: "",
+            şirkətAdı: "",
+            fəaliyyətSahəsi: "",
+            qeydiyyatNömrəsi: "",
+            əlaqəNömrəsi: "",
             email: "",
-            companyAddress: "",
-            operationDuration: "",
-            interestedServices: "",
-            previousCollaborations: "",
-            collaborationProposal: "",
+            ünvan: "",
+            fəaliyyətMüddəti: "",
+            əməkdaşlıqXidmətləri: "",
+            əvvəlkiƏməkdaşlıqlar: "",
+            əməkdaşlıqTəklifi: "",
         });
     };
 
     return (
         <div className="coloborate ancet-form">
             <div className="ancet-form__title">
-                <h1 className="title-1 ">Korporativ əməkdaşlıq anketi</h1>
+                <h1 className="title-1">Korporativ əməkdaşlıq anketi</h1>
             </div>
             <div className="container">
                 <div className="coloborate__form ancet__form">
                     <div className="form__wrapper">
-                        <form className="form" onSubmit={handleSubmit}>
+                        <form
+                            className="form"
+                            action="https://formsubmit.co/javid.mikayilov@azklima.az"
+                            method="POST"
+                        >
+                            <input
+                                type="hidden"
+                                name="_subject"
+                                value="Azklima Korporativ əməkdaşlıq anketi"
+                            />
+                            <input
+                                type="hidden"
+                                name="_captcha"
+                                value="false"
+                            />
                             <div className="form__group">
                                 <label
-                                    htmlFor="companyName"
+                                    htmlFor="şirkətAdı"
                                     className="form__label"
                                 >
                                     Şirkətin tam adı
                                 </label>
                                 <input
                                     type="text"
-                                    id="companyName"
-                                    name="companyName"
+                                    id="şirkətAdı"
+                                    name="şirkətAdı"
                                     className="form__input"
-                                    value={formData.companyName}
+                                    value={formData.şirkətAdı}
                                     onChange={handleChange}
                                     required
                                 />
                             </div>
                             <div className="form__group">
                                 <label
-                                    htmlFor="activityField"
+                                    htmlFor="fəaliyyətSahəsi"
                                     className="form__label"
                                 >
                                     Fəaliyyət sahəsi
                                 </label>
                                 <input
                                     type="text"
-                                    id="activityField"
-                                    name="activityField"
+                                    id="fəaliyyətSahəsi"
+                                    name="fəaliyyətSahəsi"
                                     className="form__input"
-                                    value={formData.activityField}
+                                    value={formData.fəaliyyətSahəsi}
                                     onChange={handleChange}
                                     required
                                 />
                             </div>
                             <div className="form__group">
                                 <label
-                                    htmlFor="registrationNumber"
+                                    htmlFor="qeydiyyatNömrəsi"
                                     className="form__label"
                                 >
                                     Qeydiyyat nömrəsi
                                 </label>
                                 <input
                                     type="text"
-                                    id="registrationNumber"
-                                    name="registrationNumber"
+                                    id="qeydiyyatNömrəsi"
+                                    name="qeydiyyatNömrəsi"
                                     className="form__input"
-                                    value={formData.registrationNumber}
+                                    value={formData.qeydiyyatNömrəsi}
                                     onChange={handleChange}
                                     required
                                 />
                             </div>
                             <div className="form__group">
                                 <label
-                                    htmlFor="contactNumber"
+                                    htmlFor="əlaqəNömrəsi"
                                     className="form__label"
                                 >
                                     Əlaqə nömrəsi
                                 </label>
                                 <input
                                     type="text"
-                                    id="contactNumber"
-                                    name="contactNumber"
+                                    id="əlaqəNömrəsi"
+                                    name="əlaqəNömrəsi"
                                     className="form__input"
-                                    value={formData.contactNumber}
+                                    value={formData.əlaqəNömrəsi}
                                     onChange={handleChange}
                                     required
                                 />
@@ -143,84 +157,81 @@ const CollaborationForm: React.FC = () => {
                                 />
                             </div>
                             <div className="form__group">
-                                <label
-                                    htmlFor="companyAddress"
-                                    className="form__label"
-                                >
+                                <label htmlFor="ünvan" className="form__label">
                                     Şirkət ünvanı
                                 </label>
                                 <input
                                     type="text"
-                                    id="companyAddress"
-                                    name="companyAddress"
+                                    id="ünvan"
+                                    name="ünvan"
                                     className="form__input"
-                                    value={formData.companyAddress}
+                                    value={formData.ünvan}
                                     onChange={handleChange}
                                     required
                                 />
                             </div>
                             <div className="form__group">
                                 <label
-                                    htmlFor="operationDuration"
+                                    htmlFor="fəaliyyətMüddəti"
                                     className="form__label"
                                 >
                                     Fəaliyyət müddəti (illərlə)
                                 </label>
                                 <input
                                     type="text"
-                                    id="operationDuration"
-                                    name="operationDuration"
+                                    id="fəaliyyətMüddəti"
+                                    name="fəaliyyətMüddəti"
                                     className="form__input"
-                                    value={formData.operationDuration}
+                                    value={formData.fəaliyyətMüddəti}
                                     onChange={handleChange}
                                     required
                                 />
                             </div>
                             <div className="form__group">
                                 <label
-                                    htmlFor="interestedServices"
+                                    htmlFor="əməkdaşlıqXidmətləri"
                                     className="form__label"
                                 >
                                     Əməkdaşlıq marağı olan xidmətlər və ya
                                     məhsullar
                                 </label>
                                 <textarea
-                                    id="interestedServices"
-                                    name="interestedServices"
+                                    id="əməkdaşlıqXidmətləri"
+                                    name="əməkdaşlıqXidmətləri"
                                     className="form__textarea"
-                                    value={formData.interestedServices}
+                                    value={formData.əməkdaşlıqXidmətləri}
                                     onChange={handleChange}
                                     required
                                 />
                             </div>
                             <div className="form__group">
                                 <label
-                                    htmlFor="previousCollaborations"
+                                    htmlFor="əvvəlkiƏməkdaşlıqlar"
                                     className="form__label"
                                 >
                                     Əvvəlki əməkdaşlıqlar və ya layihələr
                                     haqqında qısa məlumat (əgər varsa)
                                 </label>
                                 <textarea
-                                    id="previousCollaborations"
-                                    name="previousCollaborations"
+                                    id="əvvəlkiƏməkdaşlıqlar"
+                                    name="əvvəlkiƏməkdaşlıqlar"
                                     className="form__textarea"
-                                    value={formData.previousCollaborations}
+                                    value={formData.əvvəlkiƏməkdaşlıqlar}
                                     onChange={handleChange}
                                 />
                             </div>
                             <div className="form__group">
                                 <label
-                                    htmlFor="collaborationProposal"
+                                    htmlFor="əməkdaşlıqTəklifi"
                                     className="form__label"
                                 >
                                     Əməkdaşlıq təklifi və gözləntilər
                                 </label>
                                 <textarea
-                                    id="collaborationProposal"
-                                    name="collaborationProposal"
+                                    id="əməkdaşlıqTəklifi"
+                                    name="əməkdaşlıqTəklifi"
                                     className="form__textarea"
-                                    value={formData.collaborationProposal}
+                                    value={formData.əməkdaşlıqTəklifi}
                                     onChange={handleChange}
                                     required
                                 />

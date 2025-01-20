@@ -103,7 +103,13 @@ const Home: React.FC = () => {
                                     (product) =>
                                         product.subcategory ===
                                             "KOLLEKTOR VƏ YERDƏN İSİTMƏ QRUPU" ||
-                                        product.category === "nasoslar" ||
+                                        (product.category === "nasoslar" &&
+                                            ((Number(product.id) <= 249 &&
+                                                Number(product.id) >= 246) ||
+                                                Number(product.id) === 212)) ||
+                                        Number(product.id) === 213 ||
+                                        Number(product.id) === 214 ||
+                                        Number(product.id) === 217 ||
                                         product.category ===
                                             "su-filtrleri-ve-kartricler"
                                 )

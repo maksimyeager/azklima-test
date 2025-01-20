@@ -1,20 +1,20 @@
 import React, { FC, useState } from "react";
 
 interface FormData {
-    firstName: string;
-    lastName: string;
-    email: string;
-    phone: string;
-    coverLetter: string;
+    Adınız: string;
+    Soyadınız: string;
+    Email: string;
+    Telefon: string;
+    Mövqe: string;
 }
 
 const Form: FC = () => {
     const [formData, setFormData] = useState<FormData>({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        coverLetter: "",
+        Adınız: "",
+        Soyadınız: "",
+        Email: "",
+        Telefon: "",
+        Mövqe: "",
     });
 
     const handleChange = (
@@ -28,44 +28,55 @@ const Form: FC = () => {
         e.preventDefault();
         console.log("Form Data Submitted:", formData);
         setFormData({
-            firstName: "",
-            lastName: "",
-            email: "",
-            phone: "",
-            coverLetter: "",
+            Adınız: "",
+            Soyadınız: "",
+            Email: "",
+            Telefon: "",
+            Mövqe: "",
         });
     };
 
     return (
         <div className="form__wrapper">
-            <form className="form" onSubmit={handleSubmit}>
+            <form
+                className="form"
+                action="https://formsubmit.co/javid.mikayilov@azklima.az"
+                method="POST"
+            >
+                <input
+                    type="hidden"
+                    name="_subject"
+                    value="Azklima İşə Qəbul Siyasət"
+                />
+                <input type="hidden" name="_captcha" value="false" />
+
                 <div className="form__group form__group--row">
                     <div className="form__group form__group--name">
-                        <label htmlFor="firstName" className="form__label">
+                        <label htmlFor="Adınız" className="form__label">
                             Adınız
                         </label>
                         <input
                             type="text"
-                            id="firstName"
-                            name="firstName"
+                            id="Adınız"
+                            name="Adınız"
                             className="form__input"
                             placeholder="Jhon"
-                            value={formData.firstName}
+                            value={formData.Adınız}
                             onChange={handleChange}
                             required
                         />
                     </div>
                     <div className="form__group form__group--surname">
-                        <label htmlFor="lastName" className="form__label">
+                        <label htmlFor="Soyadınız" className="form__label">
                             Soyadınız
                         </label>
                         <input
                             type="text"
-                            id="lastName"
-                            name="lastName"
+                            id="Soyadınız"
+                            name="Soyadınız"
                             className="form__input"
                             placeholder="Doe"
-                            value={formData.lastName}
+                            value={formData.Soyadınız}
                             onChange={handleChange}
                             required
                         />
@@ -73,45 +84,45 @@ const Form: FC = () => {
                 </div>
 
                 <div className="form__group form__group--email">
-                    <label htmlFor="email" className="form__label">
+                    <label htmlFor="Email" className="form__label">
                         Email
                     </label>
                     <input
                         type="email"
-                        id="email"
-                        name="email"
+                        id="Email"
+                        name="Email"
                         className="form__input"
                         placeholder="example@gmail.com"
-                        value={formData.email}
+                        value={formData.Email}
                         onChange={handleChange}
                         required
                     />
                 </div>
 
                 <div className="form__group form__group--phone">
-                    <label htmlFor="phone" className="form__label">
+                    <label htmlFor="Telefon" className="form__label">
                         Telefon nömrəniz
                     </label>
                     <input
                         type="tel"
-                        id="phone"
-                        name="phone"
+                        id="Telefon"
+                        name="Telefon"
                         className="form__input"
-                        value={formData.phone}
+                        value={formData.Telefon}
                         onChange={handleChange}
                         required
                     />
                 </div>
 
                 <div className="form__group form__group--cover-letter">
-                    <label htmlFor="coverLetter" className="form__label">
+                    <label htmlFor="Mövqe" className="form__label">
                         Hansı mövqeyə müraciət edirsiniz?
                     </label>
                     <textarea
-                        id="coverLetter"
-                        name="coverLetter"
+                        id="Mövqe"
+                        name="Mövqe"
                         className="form__textarea"
-                        value={formData.coverLetter}
+                        value={formData.Mövqe}
                         onChange={handleChange}
                         required
                     ></textarea>

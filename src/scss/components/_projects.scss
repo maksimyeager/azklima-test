@@ -5,6 +5,10 @@
         margin-bottom: 60px;
     }
 
+    @media (max-width: 768px) {
+        padding: 60px 0 0;
+    }
+
     .photos,
     .videos {
         display: grid;

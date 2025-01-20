@@ -36,6 +36,7 @@ const productsCategories = [
         ],
     },
     { categoryTitle: "Xomutlar", categoryKey: "xomutlar" },
+    { categoryTitle: "Alcaplast Məhsulları", categoryKey: "alcaplast-mehsullari" },
     {
         categoryTitle: "Dəsmal Qurudanlar",
         categoryKey: "desmal-qurudanlar",
@@ -232,7 +233,7 @@ const Products: React.FC = () => {
                                           (product) =>
                                               product.subcategory ===
                                               subcategory
-                                      )
+                                      ).sort((a, b) => +a.id - +b.id)
                                       .map((product, index) => (
                                           <SwiperSlide key={index}>
                                               <Link

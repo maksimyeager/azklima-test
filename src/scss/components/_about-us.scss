@@ -1,5 +1,8 @@
 .about-us {
     padding-top: 60px;
+    @media (max-width: 768px) {
+        padding-top: 0;
+    }
     p {
         font-size: 20px;
         line-height: 1.5;
