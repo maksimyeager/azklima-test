@@ -74,7 +74,7 @@ const Partners: React.FC = () => {
                     spaceBetween={30}
                     slidesPerView={1}
                     loop={true}
-                    autoplay={{delay: 300}}
+                    autoplay={{delay: 3000}}
                     breakpoints={{
                         1024: {
                             slidesPerView: 4,

@@ -8,8 +8,6 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/navigation";
-import { MdNavigateNext } from "react-icons/md";
-import { MdNavigateBefore } from "react-icons/md";
 
 const productsCategories = [
     {
