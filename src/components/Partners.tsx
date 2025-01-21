@@ -28,6 +28,7 @@ import partner17 from "../assets/partners/partner-17.jpg";
 import partner18 from "../assets/partners/partner-18.png";
 import partner19 from "../assets/partners/partner-19.jpg";
 import partner20 from "../assets/partners/partner-20.jpg";
+import partner21 from "../assets/partners/partner-21.jpg";
 
 const partners = [
     { imageUrl: partner1 },
@@ -50,6 +51,7 @@ const partners = [
     { imageUrl: partner18 },
     { imageUrl: partner19 },
     { imageUrl: partner20 },
+    { imageUrl: partner21 },
 ];
 
 const Partners: React.FC = () => {
@@ -72,7 +74,7 @@ const Partners: React.FC = () => {
                     spaceBetween={30}
                     slidesPerView={1}
                     loop={true}
-                    // autoplay={{delay: 3000}}
+                    autoplay={{delay: 300}}
                     breakpoints={{
                         1024: {
                             slidesPerView: 4,

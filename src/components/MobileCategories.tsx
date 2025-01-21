@@ -24,6 +24,7 @@ const categories = [
     { name: "Xomutlar", path: "/products/xomutlar" },
     { name: "Dəsmal Qurudanlar", path: "/products/desmal-qurudanlar" },
     { name: "Kanalizasiya Boruları", path: "/products/kanalizasiya-borulari" },
+    { name: "Alcaplast Məhsulları", path: "/products/alcaplast-mehsullari" },
     {
         name: "Duş Kanalları Və Süzgəçlər",
         path: "/products/dus-kanallari-ve-suzgecler",

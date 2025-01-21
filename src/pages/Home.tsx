@@ -84,6 +84,7 @@ const Home: React.FC = () => {
                             spaceBetween={30} // Отступы между слайдами
                             loop={true}
                             slidesPerView={1}
+                            autoplay={{ delay: 3000 }}
                             breakpoints={{
                                 768: {
                                     slidesPerView: 3,
