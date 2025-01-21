@@ -83,11 +83,11 @@ const Home: React.FC = () => {
                             className="products-swiper"
                             spaceBetween={30} // Отступы между слайдами
                             loop={true}
-                            slidesPerView={1}
+                            slidesPerView={1.2}
                             autoplay={{ delay: 3000 }}
                             breakpoints={{
                                 768: {
-                                    slidesPerView: 3,
+                                    slidesPerView: 3.2,
                                 },
                             }}
                             navigation={{
