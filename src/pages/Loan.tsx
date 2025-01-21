@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 import FileUploader from "../components/FileUploader";
-import DataInput from "../components/DataInput"; // Импортируем кастомный DataInput
+import DataInput from "../components/DataInput";
+import emailjs from "@emailjs/browser";
 
 interface FormData {
     firstName: string;
     lastName: string;
     birthDate: string;
     phoneNumber: string;
-    file: File | null;
     idSerialNumber: string;
     registrationAddress: string;
     residentialAddress: string;
     desiredProducts: string;
+    file: File | null;
 }
 
 const Loan: React.FC = () => {
@@ -20,11 +21,11 @@ const Loan: React.FC = () => {
         lastName: "",
         birthDate: "",
         phoneNumber: "",
-        file: null,
         idSerialNumber: "",
         registrationAddress: "",
         residentialAddress: "",
         desiredProducts: "",
+        file: null,
     });
 
     const handleChange = (
@@ -34,9 +35,42 @@ const Loan: React.FC = () => {
         setFormData({ ...formData, [name]: value });
     };
 
+    const sendEmail = () => {
+        const emailData = {
+            firstName: formData.firstName,
+            lastName: formData.lastName,
+            birthDate: formData.birthDate,
+            phoneNumber: formData.phoneNumber,
+            idSerialNumber: formData.idSerialNumber,
+            registrationAddress: formData.registrationAddress,
+            residentialAddress: formData.residentialAddress,
+            desiredProducts: formData.desiredProducts,
+            file: formData.file,
+        };
+
+        emailjs.send(
+            "service_mwzk6wc", // Замените на ID вашего сервиса
+            "template_l47a2l9", // Замените на ID вашего шаблона
+            emailData,
+            "qOh3vr15maWfko-we" // Замените на ваш публичный ключ
+        );
+
+        setFormData({
+            firstName: "",
+            lastName: "",
+            birthDate: "",
+            phoneNumber: "",
+            idSerialNumber: "",
+            registrationAddress: "",
+            residentialAddress: "",
+            desiredProducts: "",
+            file: null,
+        });
+    };
+
     const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        console.log("Form Data Submitted:", formData);
+        e.preventDefault(); // Отменяем стандартное поведение формы
+        sendEmail(); // Отправляем email
     };
 
     return (

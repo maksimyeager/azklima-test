@@ -129,7 +129,7 @@ const Form: FC = () => {
                 </div>
 
                 <button type="submit" className="form__button">
-                    Qöndər
+                    Göndər
                 </button>
             </form>
         </div>

@@ -1,23 +1,15 @@
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 import FileUploader from "../components/FileUploader";
 import DataInput from "../components/DataInput";
-import emailjs from "@emailjs/browser";
-
-interface FormData {
-    firstName: string;
-    lastName: string;
-    birthDate: string;
-    phoneNumber: string;
-    file: File | null;
-}
 
 const MastersCollaborate: React.FC = () => {
-    const [formData, setFormData] = useState<FormData>({
+    const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",
         birthDate: "",
         phoneNumber: "",
-        file: null,
+        file: null as File | null, // Храним файл
     });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -29,36 +21,38 @@ const MastersCollaborate: React.FC = () => {
         setFormData({ ...formData, birthDate: value });
     };
 
+    const handleFileChange = (file: File | null) => {
+        setFormData({ ...formData, file });
+    };
+
     const sendEmail = () => {
         const emailData = {
             firstName: formData.firstName,
             lastName: formData.lastName,
             birthDate: formData.birthDate,
             phoneNumber: formData.phoneNumber,
-            file: formData.file ? formData.file.name : "Файл не прикреплён",
+            file: null,
         };
 
         emailjs.send(
-            "service_re5gkzr", // Замените на ID вашего сервиса
-            "template_b26vb6f", // Замените на ID вашего шаблона
+            "service_mwzk6wc", // Замените на ID вашего сервиса
+            "template_c6ite71", // Замените на ID вашего шаблона
             emailData,
-            "zPTmEOlGptBq0EI7i" // Замените на ваш публичный ключ
+            "qOh3vr15maWfko-we" // Замените на ваш публичный ключ
         );
-    };
-
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        console.log("Form Data Submitted:", formData);
-
-        sendEmail();
 
         setFormData({
             firstName: "",
             lastName: "",
             birthDate: "",
             phoneNumber: "",
-            file: null,
+            file: null as File | null,
         });
+    };
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault(); // Отменяем стандартное поведение формы
+        sendEmail(); // Отправляем email
     };
 
     return (
@@ -148,14 +142,7 @@ const MastersCollaborate: React.FC = () => {
                                 >
                                     CV *
                                 </label>
-                                <FileUploader
-                                    onFileChange={(file) =>
-                                        setFormData({
-                                            ...formData,
-                                            file: file,
-                                        })
-                                    }
-                                />
+                                <FileUploader onFileChange={handleFileChange} />
                             </div>
 
                             <button type="submit" className="form__button">

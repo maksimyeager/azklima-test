@@ -28,7 +28,6 @@ const FileUploader: React.FC<FileUploaderProps> = ({ onFileChange }) => {
                 type="file"
                 id="file-upload"
                 name="file-upload"
-                accept=".pdf,.doc,.docx"
                 onChange={handleInputChange}
                 style={{ display: "none" }} // Скрываем стандартный инпут
             />
