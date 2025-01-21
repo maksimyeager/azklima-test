@@ -34,7 +34,10 @@ const productsCategories = [
         ],
     },
     { categoryTitle: "Xomutlar", categoryKey: "xomutlar" },
-    { categoryTitle: "Alcaplast Məhsulları", categoryKey: "alcaplast-mehsullari" },
+    {
+        categoryTitle: "Alcaplast Məhsulları",
+        categoryKey: "alcaplast-mehsullari",
+    },
     {
         categoryTitle: "Dəsmal Qurudanlar",
         categoryKey: "desmal-qurudanlar",
@@ -180,7 +183,7 @@ const Products: React.FC = () => {
                                   className="products-swiper"
                                   spaceBetween={30} // Отступы между слайдами
                                   loop={true}
-                                  slidesPerView={1}
+                                  slidesPerView={1.2} // Показываем чуть больше одного слайда (0.2 от ширины)
                                   navigation={{
                                       prevEl: `.prev-${index}`,
                                       nextEl: `.next-${index}`,
@@ -192,8 +195,8 @@ const Products: React.FC = () => {
                                                   (product) =>
                                                       product.subcategory ===
                                                       subcategory
-                                              ).length >= 3
-                                                  ? 3
+                                              ).length > 3
+                                                  ? 3.2 // Показываем край следующего слайда
                                                   : products.filter(
                                                         (product) =>
                                                             product.subcategory ===
@@ -231,7 +234,8 @@ const Products: React.FC = () => {
                                           (product) =>
                                               product.subcategory ===
                                               subcategory
-                                      ).sort((a, b) => +a.id - +b.id)
+                                      )
+                                      .sort((a, b) => +a.id - +b.id)
                                       .map((product, index) => (
                                           <SwiperSlide key={index}>
                                               <Link
@@ -270,7 +274,7 @@ const Products: React.FC = () => {
                                   className="products-swiper"
                                   spaceBetween={30}
                                   loop={true}
-                                  slidesPerView={1}
+                                  slidesPerView={1.2}
                                   navigation={{
                                       prevEl: ".global-prev",
                                       nextEl: ".global-next",
@@ -278,8 +282,8 @@ const Products: React.FC = () => {
                                   breakpoints={{
                                       768: {
                                           slidesPerView:
-                                              products.length >= 3
-                                                  ? 3
+                                              products.length > 3
+                                                  ? 3.2
                                                   : products.length,
                                       },
                                   }}
