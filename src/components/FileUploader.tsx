@@ -3,9 +3,10 @@ import { TbCloudUpload } from "react-icons/tb";
 
 interface FileUploaderProps {
     onFileChange: (file: File | null) => void;
+    isDisabled: boolean;
 }
 
-const FileUploader: React.FC<FileUploaderProps> = ({ onFileChange }) => {
+const FileUploader: React.FC<FileUploaderProps> = ({isDisabled, onFileChange }) => {
     const [fileName, setFileName] = useState<string | null>(null);
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -30,6 +31,7 @@ const FileUploader: React.FC<FileUploaderProps> = ({ onFileChange }) => {
                 name="file-upload"
                 onChange={handleInputChange}
                 style={{ display: "none" }} // Скрываем стандартный инпут
+                disabled={isDisabled}
             />
             {fileName && <p className="file-uploader__file-name">{fileName}</p>}
         </div>

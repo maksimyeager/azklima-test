@@ -27,6 +27,10 @@ const Loan: React.FC = () => {
         desiredProducts: "",
         file: null,
     });
+    const [isChecked, setIsChecked] = useState(false);
+    const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setIsChecked(e.target.checked); // Обновляем состояние чекбокса
+    };
 
     const handleChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -236,6 +240,17 @@ const Loan: React.FC = () => {
                                 >
                                     Şəxsiyyət Vəsiqəsi*
                                 </label>
+                                <div className="checkbox-block">
+                                    <input
+                                        type="checkbox"
+                                        onChange={handleCheckboxChange}
+                                        checked={isChecked}
+                                    />
+                                    <span>
+                                        Üçüncü şəxslərə şəxsi məlumatlarınızı
+                                        ötürməyə razısınızmı?
+                                    </span>
+                                </div>
                                 <FileUploader
                                     onFileChange={(file) =>
                                         setFormData({
@@ -243,6 +258,7 @@ const Loan: React.FC = () => {
                                             file: file,
                                         })
                                     }
+                                    isDisabled={!isChecked}
                                 />
                             </div>
 

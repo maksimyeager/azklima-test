@@ -8,7 +8,7 @@ const categories = [
         name: "Kombilər – Qazanlar",
         path: "",
         subcategories: [
-            { name: "Warmhaus 🇹🇷", path: "/products/warmhaus" },
+            { name: "Warmhaus 😀", path: "/products/warmhaus" },
             { name: "Thermona 🇨🇿🇿", path: "/products/thermona" },
             { name: "Combini 🇨🇳", path: "/products/combini" },
             { name: "Prestige 🇨🇳", path: "/products/prestige" },

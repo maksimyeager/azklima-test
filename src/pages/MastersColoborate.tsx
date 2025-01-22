@@ -142,7 +142,10 @@ const MastersCollaborate: React.FC = () => {
                                 >
                                     CV *
                                 </label>
-                                <FileUploader onFileChange={handleFileChange} />
+                                <FileUploader
+                                    onFileChange={handleFileChange}
+                                    isDisabled={false}
+                                />
                             </div>
 
                             <button type="submit" className="form__button">

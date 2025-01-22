@@ -1,22 +1,21 @@
 .search-container {
     margin-top: 15px;
     position: relative;
-}
-
-input {
-    border-radius: 10px;
-    border: 1px solid #287bdd;
-    color: #287bdd;
-    font-weight: 500;
-    line-height: 20px;
-    padding: 10px;
-    // padding-left: 60px;
-    transition: 0.3s;
-    width: 100%;
-
-    &::placeholder {
+    input {
+        border-radius: 10px;
+        border: 1px solid #287bdd;
         color: #287bdd;
         font-weight: 500;
+        line-height: 20px;
+        padding: 10px;
+        // padding-left: 60px;
+        transition: 0.3s;
+        width: 100%;
+
+        &::placeholder {
+            color: #287bdd;
+            font-weight: 500;
+        }
     }
 }
 
