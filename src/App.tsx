@@ -13,10 +13,11 @@ import Loan from "./pages/Loan.tsx";
 import Products from "./pages/Products.tsx";
 import Product from "./pages/Product.tsx";
 import PageTitle from "./utils/pageTitle.ts";
+import { ProductProvider } from "./context/ProductContext.tsx";
 
 const App = () => {
     return (
-        <>
+        <ProductProvider>
             <PageTitle />
             <ScrollToTop />
             <Routes>
@@ -39,7 +40,7 @@ const App = () => {
                     <Route path="/product/:id" element={<Product />} />
                 </Route>
             </Routes>
-        </>
+        </ProductProvider>
     );
 };
 

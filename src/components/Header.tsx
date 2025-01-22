@@ -5,6 +5,8 @@ import { FaChevronDown } from "react-icons/fa";
 import logo from "../assets/logo.png";
 import MobileNavbar from "./MobileNavbar";
 import Categories from "./Categories";
+import ProductSearch from "./ProductsSearch";
+import ProductList from "./ProductsList";
 
 const headerLinks = [
     { name: "HAQQIMIZDA", path: "/about-us" },
@@ -30,7 +32,6 @@ const Header: React.FC = () => {
     const handleCloseNavbar = () => {
         setOpen(false);
     };
-    
 
     return (
         <>
@@ -57,7 +58,10 @@ const Header: React.FC = () => {
                                             onMouseEnter={handleMouseEnter}
                                             onMouseLeave={handleMouseLeave}
                                         >
-                                            <a href="#" className="categories__link">
+                                            <a
+                                                href="#"
+                                                className="categories__link"
+                                            >
                                                 {link.name}
                                                 <FaChevronDown
                                                     className={`icon-1 ${
@@ -68,7 +72,11 @@ const Header: React.FC = () => {
                                                 />
                                             </a>
                                             {dropdownOpen && (
-                                                <Categories closeDropdown={handleMouseLeave}/>
+                                                <Categories
+                                                    closeDropdown={
+                                                        handleMouseLeave
+                                                    }
+                                                />
                                             )}
                                         </li>
                                     );
@@ -81,9 +89,7 @@ const Header: React.FC = () => {
                                             isActive ? "active" : ""
                                         }`}
                                     >
-                                        <Link to={link.path}>
-                                            {link.name}
-                                        </Link>
+                                        <Link to={link.path}>{link.name}</Link>
                                     </li>
                                 );
                             })}
@@ -98,7 +104,14 @@ const Header: React.FC = () => {
                         )}
                     </button>
                 </div>
+                <div className="container">
+                    <div className="header__search">
+                        <ProductSearch />
+                    </div>
+                </div>
+                <ProductList />
             </header>
+
             <MobileNavbar open={open} onClose={handleCloseNavbar} />
         </>
     );

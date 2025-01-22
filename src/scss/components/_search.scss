@@ -1,0 +1,68 @@
+.search-container {
+    margin-top: 15px;
+    position: relative;
+}
+
+input {
+    border-radius: 10px;
+    border: 1px solid #287bdd;
+    color: #287bdd;
+    font-weight: 500;
+    line-height: 20px;
+    padding: 10px;
+    // padding-left: 60px;
+    transition: 0.3s;
+    width: 100%;
+
+    &::placeholder {
+        color: #287bdd;
+        font-weight: 500;
+    }
+}
+
+.product-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    width: 100%;
+
+    &__wrapper {
+        background: rgba(255, 255, 255, 1);
+        position: absolute;
+        width: 100%;
+        top: 100%;
+    }
+}
+
+.product-item {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    align-items: center;
+    gap: 10px;
+    color: #287bdd;
+    resize: none;
+
+    h2 {
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    &__img {
+        text-align: center;
+        width: 60px;
+        height: 60px;
+        overflow: hidden;
+        border: 1px solid #777777;
+        padding: 0; /* Убираем внутренний отступ, чтобы изображение не уменьшалось */
+        box-sizing: border-box; /* Учитываем границу в размере блока */
+        resize: none;
+
+        img {
+            object-fit: contain; /* Обрезка изображения по размеру контейнера */
+            width: 100%;
+            height: 100%;
+            resize: none !important;
+        }
+    }
+}
