@@ -12,6 +12,10 @@
     justify-content: center;
 
     .title-1 {
+        padding-top: 60px;
+        @media (max-width: 768px) {
+            padding-top: 0;
+        }
         font-size: 32px;
         margin-bottom: 30px;
     }

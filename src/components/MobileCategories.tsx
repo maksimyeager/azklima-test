@@ -7,15 +7,15 @@ const categories = [
         name: "Kombilər – Qazanlar",
         path: "",
         subcategories: [
-            { name: "Warmhaus 🇹🇷", path: "/products/warmhaus" },
-            { name: "Thermona 🇨🇿🇿", path: "/products/thermona" },
-            { name: "Combini 🇨🇳", path: "/products/combini" },
-            { name: "Prestige 🇨🇳", path: "/products/prestige" },
+            { name: "Warmhaus (Türkiyə)", path: "/products/warmhaus" },
+            { name: "Thermona (Çexiya)", path: "/products/thermona" },
+            { name: "Combini (Çin)", path: "/products/combini" },
+            { name: "Prestige (Çin)", path: "/products/prestige" },
             {
-                name: "New Optimal 🇨🇳",
+                name: "New Optimal (Çin)",
                 path: "/products/new-optimal",
             },
-            { name: "Comfort 🇨🇳", path: "/products/comfort" },
+            { name: "Comfort (Çin)", path: "/products/comfort" },
         ],
     },
     { name: "Boylerlər", path: "/products/boylerler" },
@@ -51,7 +51,6 @@ const categories = [
         path: "/products/su-filtrleri-ve-kartricler",
     },
     { name: "Yapışdırıcılar", path: "/products/yapishdiricilar" },
-    
 ];
 
 type CategoriesProps = {

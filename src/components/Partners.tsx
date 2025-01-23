@@ -29,6 +29,8 @@ import partner18 from "../assets/partners/partner-18.png";
 import partner19 from "../assets/partners/partner-19.jpg";
 import partner20 from "../assets/partners/partner-20.jpg";
 import partner21 from "../assets/partners/partner-21.jpg";
+import partner22 from "../assets/partners/partner-22.jpg";
+import partner23 from "../assets/partners/partner-23.jpg";
 
 const partners = [
     { imageUrl: partner1 },
@@ -52,6 +54,8 @@ const partners = [
     { imageUrl: partner19 },
     { imageUrl: partner20 },
     { imageUrl: partner21 },
+    { imageUrl: partner22 },
+    { imageUrl: partner23 },
 ];
 
 const Partners: React.FC = () => {
