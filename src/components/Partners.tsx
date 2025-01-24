@@ -29,8 +29,13 @@ import partner18 from "../assets/partners/partner-18.png";
 import partner19 from "../assets/partners/partner-19.jpg";
 import partner20 from "../assets/partners/partner-20.jpg";
 import partner21 from "../assets/partners/partner-21.jpg";
-import partner22 from "../assets/partners/partner-22.jpg";
-import partner23 from "../assets/partners/partner-23.jpg";
+import partner22 from "../assets/partners/partner-22.png";
+import partner23 from "../assets/partners/partner-23.png";
+import partner24 from "../assets/partners/partner-24.png";
+import partner25 from "../assets/partners/partner-25.png";
+import partner26 from "../assets/partners/partner-26.png";
+import partner27 from "../assets/partners/partner-27.png";
+import partner28 from "../assets/partners/partner-28.png";
 
 const partners = [
     { imageUrl: partner1 },
@@ -56,6 +61,11 @@ const partners = [
     { imageUrl: partner21 },
     { imageUrl: partner22 },
     { imageUrl: partner23 },
+    { imageUrl: partner24 },
+    { imageUrl: partner25 },
+    { imageUrl: partner26 },
+    { imageUrl: partner27 },
+    { imageUrl: partner28 },
 ];
 
 const Partners: React.FC = () => {
