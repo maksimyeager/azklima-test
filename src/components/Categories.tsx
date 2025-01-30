@@ -21,7 +21,7 @@ const categories = [
     },
     { name: "Radiatorlar", path: "/products/radiatorlar" },
     { name: "Kas Məhsulları", path: "/products/kas-mehsullari" },
-    { name: "Alcaplast Məhsulları", path: "/products/alcaplast-mehsullari" },
+    { name: "Alca Məhsulları", path: "/products/alcaplast-mehsullari" },
     { name: "Xomutlar", path: "/products/xomutlar" },
     { name: "Dəsmal Qurudanlar", path: "/products/desmal-qurudanlar" },
     { name: "Kanalizasiya Boruları", path: "/products/kanalizasiya-borulari" },

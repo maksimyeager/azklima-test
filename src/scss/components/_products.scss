@@ -4,6 +4,14 @@
     @media (max-width: 768px) {
         padding-top: 60px;
     }
+
+    .title-1 {
+        padding-top: 60px;
+
+        @media (max-width: 768px) {
+            padding-top: 0;
+        }
+    }
 }
 
 .products__wrapper {
@@ -63,8 +71,6 @@
             // justify-content: center;
             height: auto;
         }
-
-       
     }
     @media (max-width: 576px) {
         grid-template-columns: 1fr;
@@ -83,7 +89,6 @@
     padding-bottom: 30px;
     background-color: #fff;
     transition: all 0.3s ease;
-
 
     &__image {
         display: flex;
